@@ -1,6 +1,7 @@
 import { mkdir, mkdtemp, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { isWebp } from './catalog-image.mjs';
 import { assetFilename, toCatalogEntry } from './catalog-source.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -63,7 +64,11 @@ try {
     if (!response.ok) {
       throw new Error(`Image request failed for ${tool.title}: ${response.status}`);
     }
-    await writeFile(join(stagedImagesPath, assetFilename(tool.title)), Buffer.from(await response.arrayBuffer()));
+    const image = Buffer.from(await response.arrayBuffer());
+    if (!isWebp(image)) {
+      throw new Error(`Image request returned invalid WebP data for ${tool.title}`);
+    }
+    await writeFile(join(stagedImagesPath, assetFilename(tool.title)), image);
   }));
   const failedDownload = downloads.find(({ status }) => status === 'rejected');
   if (failedDownload) {

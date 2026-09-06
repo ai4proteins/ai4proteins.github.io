@@ -17,12 +17,70 @@ const VP8X_WITHOUT_IMAGE = Buffer.from(
   'hex',
 );
 
+const ZERO_LENGTH_VP8X_THEN_VALID_VP8L = Buffer.from(
+  '52494646240000005745425056503858000000005650384c0f0000002f000000000710fd8ffe0722a2ff0100',
+  'hex',
+);
+
+function chunk(type, data) {
+  const result = Buffer.alloc(8 + data.length + (data.length % 2));
+  result.write(type, 0);
+  result.writeUInt32LE(data.length, 4);
+  data.copy(result, 8);
+  return result;
+}
+
+function webpContainer(...chunks) {
+  const payload = Buffer.concat(chunks);
+  const container = Buffer.alloc(12 + payload.length);
+  container.write('RIFF', 0);
+  container.writeUInt32LE(container.length - 8, 4);
+  container.write('WEBP', 8);
+  payload.copy(container, 12);
+  return container;
+}
+
+const VALID_VP8L_CHUNK = VALID_WEBP.subarray(12);
+const VALID_VP8X_DATA = Buffer.alloc(10);
+
 test('accepts a decodable literal VP8L WebP fixture', () => {
   assert.equal(isWebp(VALID_WEBP), true);
 });
 
 test('accepts a decodable literal VP8 WebP fixture', () => {
   assert.equal(isWebp(VALID_LOSSY_WEBP), true);
+});
+
+test('accepts a valid VP8X header followed by one image chunk', () => {
+  assert.equal(
+    isWebp(webpContainer(chunk('VP8X', VALID_VP8X_DATA), VALID_VP8L_CHUNK)),
+    true,
+  );
+});
+
+test('rejects a zero-length VP8X chunk before a valid image chunk', () => {
+  assert.equal(isWebp(ZERO_LENGTH_VP8X_THEN_VALID_VP8L), false);
+});
+
+test('rejects invalid VP8X placement, size, and reserved fields', () => {
+  const invalidSize = Buffer.alloc(9);
+  const reservedFlag = Buffer.from(VALID_VP8X_DATA);
+  reservedFlag[0] = 0x80;
+  const reservedField = Buffer.from(VALID_VP8X_DATA);
+  reservedField[2] = 0x01;
+
+  for (const container of [
+    webpContainer(chunk('JUNK', Buffer.alloc(0)), chunk('VP8X', VALID_VP8X_DATA), VALID_VP8L_CHUNK),
+    webpContainer(chunk('VP8X', invalidSize), VALID_VP8L_CHUNK),
+    webpContainer(chunk('VP8X', reservedFlag), VALID_VP8L_CHUNK),
+    webpContainer(chunk('VP8X', reservedField), VALID_VP8L_CHUNK),
+  ]) {
+    assert.equal(isWebp(container), false);
+  }
+});
+
+test('rejects duplicate top-level image chunks', () => {
+  assert.equal(isWebp(webpContainer(VALID_VP8L_CHUNK, VALID_VP8L_CHUNK)), false);
 });
 
 test('rejects payloads without a complete top-level WebP image chunk', () => {

@@ -6,6 +6,9 @@ import { isWebp } from '../scripts/catalog-image.mjs';
 import { collectFilters, filterTools } from '../assets/js/catalog.js';
 
 const tools = JSON.parse(await readFile(new URL('../data/tools.json', import.meta.url)));
+const repositoryOverrides = JSON.parse(
+  await readFile(new URL('../data/repository-overrides.json', import.meta.url)),
+);
 
 const fixtureTools = [
   {
@@ -69,6 +72,34 @@ test('catalog has 156 unique and complete GitHub-linked tools', async () => {
     assert.equal(url.hostname, 'github.com');
     const image = await readFile(new URL(`../${tool.image}`, import.meta.url));
     assert.ok(isWebp(image), `${tool.image} is not a valid WebP payload`);
+  }
+});
+
+test('confirmed repository review findings stay corrected in source and generated catalog', () => {
+  const expected = {
+    AfCycDesign: {
+      override: 'https://github.com/sokrypton/ColabDesign',
+      githubUrl: 'https://github.com/sokrypton/ColabDesign',
+      linkType: 'official',
+    },
+    'EnzBert E.C. Prediction': {
+      override: undefined,
+      githubUrl: 'https://github.com/search?q=EnzBert+E.C.+Prediction&type=repositories',
+      linkType: 'search',
+    },
+    'AutoDock Vina (smina)': {
+      override: undefined,
+      githubUrl: 'https://github.com/search?q=AutoDock+Vina+%28smina%29&type=repositories',
+      linkType: 'search',
+    },
+  };
+
+  for (const [title, values] of Object.entries(expected)) {
+    assert.equal(repositoryOverrides[title], values.override, `${title} source override`);
+    const tool = tools.find((entry) => entry.title === title);
+    assert.ok(tool, `${title} exists in generated catalog`);
+    assert.equal(tool.githubUrl, values.githubUrl, `${title} generated URL`);
+    assert.equal(tool.linkType, values.linkType, `${title} generated classification`);
   }
 });
 

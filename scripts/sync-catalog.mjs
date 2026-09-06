@@ -3,12 +3,17 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isWebp } from './catalog-image.mjs';
 import { assetFilename, toCatalogEntry } from './catalog-source.mjs';
+import { fetchBytes } from './fetch-bytes.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const overridesPath = join(root, 'data', 'repository-overrides.json');
 const toolsPath = join(root, 'data', 'tools.json');
 const toolImagesPath = join(root, 'assets', 'tools');
 const stagePath = await mkdtemp(join(root, '.catalog-stage-'));
+const allowedOrigin = 'https://neurosnap.ai';
+const requestTimeoutMs = 30_000;
+const catalogMaxBytes = 2 * 1024 * 1024;
+const imageMaxBytes = 8 * 1024 * 1024;
 
 async function replaceOutputs(outputs) {
   const backups = [];
@@ -40,10 +45,12 @@ async function replaceOutputs(outputs) {
 
 try {
   const overrides = JSON.parse(await readFile(overridesPath, 'utf8'));
-  const services = await fetch('https://neurosnap.ai/api/services').then((response) => {
-    if (!response.ok) throw new Error(`Catalog request failed: ${response.status}`);
-    return response.json();
+  const catalogBytes = await fetchBytes('https://neurosnap.ai/api/services', {
+    allowedOrigin,
+    maxBytes: catalogMaxBytes,
+    timeoutMs: requestTimeoutMs,
   });
+  const services = JSON.parse(catalogBytes.toString('utf8'));
   if (services.length !== 156) throw new Error(`Expected 156 services, got ${services.length}`);
 
   const tools = services.map((service) => toCatalogEntry(service, overrides[service.title]));
@@ -58,13 +65,14 @@ try {
   await writeFile(stagedToolsPath, `${JSON.stringify(tools, null, 2)}\n`);
 
   const downloads = await Promise.allSettled(tools.map(async (tool) => {
-    const response = await fetch(
+    const image = await fetchBytes(
       `https://neurosnap.ai/assets/services/${encodeURIComponent(tool.title)}.webp`,
+      {
+        allowedOrigin,
+        maxBytes: imageMaxBytes,
+        timeoutMs: requestTimeoutMs,
+      },
     );
-    if (!response.ok) {
-      throw new Error(`Image request failed for ${tool.title}: ${response.status}`);
-    }
-    const image = Buffer.from(await response.arrayBuffer());
     if (!isWebp(image)) {
       throw new Error(`Image request returned invalid WebP data for ${tool.title}`);
     }

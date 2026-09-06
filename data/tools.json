@@ -1157,8 +1157,8 @@
     ],
     "beta": false,
     "image": "assets/tools/afcycdesign.webp",
-    "githubUrl": "https://github.com/search?q=AfCycDesign&type=repositories",
-    "linkType": "search"
+    "githubUrl": "https://github.com/sokrypton/ColabDesign",
+    "linkType": "official"
   },
   {
     "title": "AF2Bind",
@@ -1420,8 +1420,8 @@
     ],
     "beta": false,
     "image": "assets/tools/enzbert-e-c-prediction.webp",
-    "githubUrl": "https://github.com/realalanc/EnzBert",
-    "linkType": "official"
+    "githubUrl": "https://github.com/search?q=EnzBert+E.C.+Prediction&type=repositories",
+    "linkType": "search"
   },
   {
     "title": "ClusterProt",
@@ -1934,8 +1934,8 @@
     ],
     "beta": false,
     "image": "assets/tools/autodock-vina-smina.webp",
-    "githubUrl": "https://github.com/mwojcikowski/smina",
-    "linkType": "official"
+    "githubUrl": "https://github.com/search?q=AutoDock+Vina+%28smina%29&type=repositories",
+    "linkType": "search"
   },
   {
     "title": "Conformer Generator",

@@ -7,7 +7,7 @@ A static catalog of 156 open-source tools for protein science. Search and combin
 From the repository root, start an HTTP server with Python 3:
 
 ```sh
-python3 -m http.server 4173 --bind 127.0.0.1
+/Users/jun/anaconda3/bin/python -m http.server 4173 --bind 127.0.0.1
 ```
 
 Open <http://127.0.0.1:4173/>. Use another port if 4173 is occupied. An HTTP server is required for JavaScript modules and the catalog request; opening `index.html` directly is insufficient. There is no build step or production package installation.
@@ -17,15 +17,15 @@ Open <http://127.0.0.1:4173/>. Use another port if 4173 is occupied. An HTTP ser
 Use Node.js 24 and Python 3.12 with Playwright and its Chromium browser installed. For a new test environment:
 
 ```sh
-python3 -m pip install playwright
-python3 -m playwright install chromium
+/Users/jun/anaconda3/bin/python -m pip install playwright
+/Users/jun/anaconda3/bin/python -m playwright install chromium
 ```
 
 Run from the repository root:
 
 ```sh
 node --test tests/*.test.mjs
-python3 -B -m unittest tests/test_site.py -v
+/Users/jun/anaconda3/bin/python -B -m unittest tests/test_site.py -v
 git diff --check
 ```
 

@@ -54,7 +54,7 @@ button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visibl
 .catalog-heading { margin-bottom: 28px; }
 .eyebrow { font-size: 13px; font-weight: 700; color: var(--muted); margin: 0 0 7px; }
 h1 { font-size: 30px; line-height: 1.25; font-weight: 650; margin: 0 0 24px; }
-.search-field { display: flex; align-items: center; gap: 14px; background: white; border: 1px solid #b4c8da; border-radius: 6px; min-height: 52px; padding: 3px 5px 3px 18px; }
+.search-field { display: flex; align-items: center; gap: 14px; background: white; border: 1px solid #7890a6; border-radius: 6px; min-height: 52px; padding: 3px 5px 3px 18px; }
 .search-field:focus-within { border-color: #3979b4; box-shadow: 0 0 0 2px #3979b425; }
 .search-icon { width: 16px; height: 16px; border: 2px solid var(--muted); border-radius: 50%; position: relative; margin-right: 3px; flex: 0 0 16px; }
 .search-icon::after { content: ""; position: absolute; width: 7px; height: 2px; right: -5px; bottom: -3px; background: var(--muted); transform: rotate(45deg); }
@@ -145,4 +145,12 @@ h1 { font-size: 30px; line-height: 1.25; font-weight: 650; margin: 0 0 24px; }
 
 @media (prefers-reduced-motion: reduce) {
   .tool-card { transition: none; }
+}
+
+@media (forced-colors: active) {
+  .menu-icon, .menu-icon::before, .menu-icon::after, .search-icon::after {
+    background: CanvasText;
+    forced-color-adjust: none;
+  }
+  .search-icon { border-color: CanvasText; }
 }

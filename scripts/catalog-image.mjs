@@ -9,6 +9,8 @@ export function isWebp(payload) {
 
   let offset = 12;
   let hasImagePayload = false;
+  let chunkIndex = 0;
+  let hasExtendedHeader = false;
 
   while (offset < payload.length) {
     if (payload.length - offset < 8) return false;
@@ -19,7 +21,15 @@ export function isWebp(payload) {
     const paddedChunkSize = chunkSize + (chunkSize % 2);
 
     if (paddedChunkSize > payload.length - chunkStart) return false;
-    if (chunkType === 'VP8 ') {
+    if (chunkType === 'VP8X') {
+      if (chunkIndex !== 0 || hasExtendedHeader || chunkSize !== 10) return false;
+      if ((payload[chunkStart] & 0xc1) !== 0) return false;
+      if (payload[chunkStart + 1] !== 0
+        || payload[chunkStart + 2] !== 0
+        || payload[chunkStart + 3] !== 0) return false;
+      hasExtendedHeader = true;
+    } else if (chunkType === 'VP8 ') {
+      if (hasImagePayload) return false;
       if (chunkSize < 10 || (payload[chunkStart] & 1) !== 0) return false;
       if (payload[chunkStart + 3] !== 0x9d
         || payload[chunkStart + 4] !== 0x01
@@ -28,6 +38,7 @@ export function isWebp(payload) {
         || (payload.readUInt16LE(chunkStart + 8) & 0x3fff) === 0) return false;
       hasImagePayload = true;
     } else if (chunkType === 'VP8L') {
+      if (hasImagePayload) return false;
       // Five header bytes must be followed by encoded image data.
       if (chunkSize <= 5 || payload[chunkStart] !== 0x2f) return false;
       if ((payload[chunkStart + 4] & 0xe0) !== 0) return false;
@@ -35,6 +46,7 @@ export function isWebp(payload) {
     }
 
     offset = chunkStart + paddedChunkSize;
+    chunkIndex += 1;
   }
 
   return offset === payload.length && hasImagePayload;

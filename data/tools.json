@@ -1,0 +1,2554 @@
+[
+  {
+    "title": "NeuroBind",
+    "description": "Design antibodies, nanobodies, scFvs, and peptides with high affinity and low immunogenicity.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Antibodies",
+      "Developability",
+      "Immunogenicity",
+      "Other Binders",
+      "Peptides",
+      "Proteins",
+      "Solubility",
+      "Stability"
+    ],
+    "beta": false,
+    "image": "assets/tools/neurobind.webp",
+    "githubUrl": "https://github.com/search?q=NeuroBind&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "BindFilter",
+    "description": "Fold and score many binder candidates with a unified, machine-readable output.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Aggregation Risk",
+      "Antibodies",
+      "Co-Folding",
+      "Developability",
+      "Energy Minimization",
+      "Immunogenicity",
+      "Mutational Scanning",
+      "Other Binders",
+      "Peptides",
+      "Protein Clustering",
+      "Protein Folding",
+      "Proteins",
+      "Solubility",
+      "Stability",
+      "Toxicity"
+    ],
+    "beta": false,
+    "image": "assets/tools/bindfilter.webp",
+    "githubUrl": "https://github.com/search?q=BindFilter&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "NeuroFold2",
+    "description": "Design next-generation enzymes by co-optimizing for catalytic activity, stability, and solubility.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Developability",
+      "Enzymes",
+      "Proteins",
+      "Solubility",
+      "Stability"
+    ],
+    "beta": false,
+    "image": "assets/tools/neurofold2.webp",
+    "githubUrl": "https://github.com/search?q=NeuroFold2&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "Chai-1 (AlphaFold3)",
+    "description": "Commercial friendly alternative to AlphaFold3 with competitive MSA-less option.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Co-Folding",
+      "Conformation Generation",
+      "Nucleotides",
+      "Protein Folding",
+      "Proteins",
+      "Protein–Ligand Docking",
+      "Protein–Protein Docking",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/chai-1-alphafold3.webp",
+    "githubUrl": "https://github.com/chaidiscovery/chai-lab",
+    "linkType": "official"
+  },
+  {
+    "title": "Boltz-2 (AlphaFold3)",
+    "description": "Open-source AlphaFold3-class model (Boltz-2) with built-in affinity prediction.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Co-Folding",
+      "Conformation Generation",
+      "Macrocyclic",
+      "Nucleotides",
+      "Protein Folding",
+      "Proteins",
+      "Protein–Ligand Docking",
+      "Protein–Protein Docking",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/boltz-2-alphafold3.webp",
+    "githubUrl": "https://github.com/jwohlwend/boltz",
+    "linkType": "official"
+  },
+  {
+    "title": "Protenix (AlphaFold3)",
+    "description": "Another AlphaFold3 implementation developed by the ByteDance team.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Co-Folding",
+      "Conformation Generation",
+      "Nucleotides",
+      "Protein Folding",
+      "Proteins",
+      "Protein–Ligand Docking",
+      "Protein–Protein Docking",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/protenix-alphafold3.webp",
+    "githubUrl": "https://github.com/bytedance/Protenix",
+    "linkType": "official"
+  },
+  {
+    "title": "IntelliFold (AlphaFold3)",
+    "description": "Open-source AlphaFold3-class model (IntelliFold) with fast, accurate structure prediction across biomolecules.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Co-Folding",
+      "Conformation Generation",
+      "Nucleotides",
+      "Protein Folding",
+      "Proteins",
+      "Protein–Ligand Docking",
+      "Protein–Protein Docking",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/intellifold-alphafold3.webp",
+    "githubUrl": "https://github.com/IntelliGen-AI/IntelliFold",
+    "linkType": "official"
+  },
+  {
+    "title": "AlphaFold2",
+    "description": "Accurately predict protein and complex structures at the atomic level using their amino acid sequence.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Protein Folding",
+      "Proteins",
+      "Protein–Protein Docking"
+    ],
+    "beta": false,
+    "image": "assets/tools/alphafold2.webp",
+    "githubUrl": "https://github.com/google-deepmind/alphafold",
+    "linkType": "official"
+  },
+  {
+    "title": "BoltzGen",
+    "description": "Generate high-affinity binders for proteins, nucleic acids, and small molecules using an all-atom diffusion model.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Developability",
+      "Macrocyclic",
+      "Nucleotides",
+      "Proteins",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/boltzgen.webp",
+    "githubUrl": "https://github.com/HannesStark/boltzgen",
+    "linkType": "official"
+  },
+  {
+    "title": "Prot2Prop Protein Property Prediction",
+    "description": "Predict multiple protein developability properties from sequence in one batch workflow.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Developability",
+      "Expression",
+      "Proteins",
+      "Solubility",
+      "Stability"
+    ],
+    "beta": false,
+    "image": "assets/tools/prot2prop-protein-property-prediction.webp",
+    "githubUrl": "https://github.com/NeurosnapInc/Prot2Prop",
+    "linkType": "official"
+  },
+  {
+    "title": "FKSFold-Chai",
+    "description": "Chai-1 fork with Feynman-Kac steering for molecular-glue ternary complexes.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Co-Folding",
+      "Conformation Generation",
+      "Nucleotides",
+      "Protein Folding",
+      "Proteins",
+      "Protein–Ligand Docking",
+      "Protein–Protein Docking",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/fksfold-chai.webp",
+    "githubUrl": "https://github.com/TimS-ml/FKSFold-Chai",
+    "linkType": "official"
+  },
+  {
+    "title": "LMI4Boltz",
+    "description": "Boltz-2-compatible low-memory fork with extra chunking and bfloat16 controls.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Co-Folding",
+      "Conformation Generation",
+      "Macrocyclic",
+      "Nucleotides",
+      "Protein Folding",
+      "Proteins",
+      "Protein–Ligand Docking",
+      "Protein–Protein Docking",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/lmi4boltz.webp",
+    "githubUrl": "https://github.com/tlitfin/lmi4boltz",
+    "linkType": "official"
+  },
+  {
+    "title": "BAGEL Protein Design",
+    "description": "User-configured BAGEL workflows for mini-enzyme, mimic-enzyme, and binder design.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Enzymes"
+    ],
+    "beta": false,
+    "image": "assets/tools/bagel-protein-design.webp",
+    "githubUrl": "https://github.com/softnanolab/bagel",
+    "linkType": "official"
+  },
+  {
+    "title": "Proteina-Complexa",
+    "description": "Fully atomistic binder and motif design with generative search and structure-prediction validation.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Peptides",
+      "Proteins",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/proteina-complexa.webp",
+    "githubUrl": "https://github.com/NVIDIA-BioNeMo/Proteina-Complexa",
+    "linkType": "official"
+  },
+  {
+    "title": "ProteinEBM Scoring",
+    "description": "Score, rank, and compare protein structures with ProteinEBM energy.",
+    "categories": [
+      "Protein Design",
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Free Energy / Binding Energy",
+      "Proteins",
+      "Virtual Screening"
+    ],
+    "beta": false,
+    "image": "assets/tools/proteinebm-scoring.webp",
+    "githubUrl": "https://github.com/jproney/ProteinEBM",
+    "linkType": "official"
+  },
+  {
+    "title": "ProteinEBM Dynamics",
+    "description": "Sample ProteinEBM folding dynamics and export trajectories.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Conformation Generation",
+      "Protein Folding",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/proteinebm-dynamics.webp",
+    "githubUrl": "https://github.com/jproney/ProteinEBM",
+    "linkType": "official"
+  },
+  {
+    "title": "Caliby",
+    "description": "Structure- and ensemble-conditioned protein sequence design, scoring, and sidechain packing.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/caliby.webp",
+    "githubUrl": "https://github.com/ProteinDesignLab/caliby",
+    "linkType": "official"
+  },
+  {
+    "title": "BindCraft",
+    "description": "One-shot design of functional protein binders.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Peptides",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/bindcraft.webp",
+    "githubUrl": "https://github.com/martinpacesa/BindCraft",
+    "linkType": "official"
+  },
+  {
+    "title": "OpenFold3 (AlphaFold3)",
+    "description": "Open-source AlphaFold3 reproduction achieving near-parity accuracy across biomolecular modalities.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Co-Folding",
+      "Conformation Generation",
+      "Nucleotides",
+      "Protein Folding",
+      "Proteins",
+      "Protein–Ligand Docking",
+      "Protein–Protein Docking",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/openfold3-alphafold3.webp",
+    "githubUrl": "https://github.com/aqlaboratory/openfold-3",
+    "linkType": "official"
+  },
+  {
+    "title": "ESMFold2",
+    "description": "Biohub all-atom ESMFold2 for proteins, nucleic acids, ligands, and complexes.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Co-Folding",
+      "Conformation Generation",
+      "Nucleotides",
+      "Protein Folding",
+      "Proteins",
+      "Protein–Ligand Docking",
+      "Protein–Protein Docking",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/esmfold2.webp",
+    "githubUrl": "https://github.com/Biohub/esm",
+    "linkType": "official"
+  },
+  {
+    "title": "ESMC Feature Interpretation",
+    "description": "Interpret residue-level biological patterns learned by ESMC using sparse autoencoder features.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/esmc-feature-interpretation.webp",
+    "githubUrl": "https://github.com/Biohub/esm",
+    "linkType": "official"
+  },
+  {
+    "title": "ESMFold2 Binder Design",
+    "description": "Design minibinders and antibody CDRs with ESMFold2 structural gradients and ESMC sequence regularization.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Antibodies",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/esmfold2-binder-design.webp",
+    "githubUrl": "https://github.com/Biohub/esm",
+    "linkType": "official"
+  },
+  {
+    "title": "ESMC Mutation Scoring",
+    "description": "Zero-shot ESMC entropy and mutation scoring from sequence alone.",
+    "categories": [
+      "Protein Design",
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Mutational Scanning",
+      "Proteins",
+      "Virtual Screening"
+    ],
+    "beta": false,
+    "image": "assets/tools/esmc-mutation-scoring.webp",
+    "githubUrl": "https://github.com/Biohub/esm",
+    "linkType": "official"
+  },
+  {
+    "title": "GNINA",
+    "description": "Enhanced molecular docking with deep learning.",
+    "categories": [
+      "Ligand/Drug Design & Screening",
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Protein–Ligand Docking",
+      "Virtual Screening"
+    ],
+    "beta": false,
+    "image": "assets/tools/gnina.webp",
+    "githubUrl": "https://github.com/gnina/gnina",
+    "linkType": "official"
+  },
+  {
+    "title": "DynamicBind",
+    "description": "Predict protein-ligand complexes using protein structure files and ligands in SMILES format.",
+    "categories": [
+      "Ligand/Drug Design & Screening",
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Protein–Ligand Docking",
+      "Virtual Screening"
+    ],
+    "beta": false,
+    "image": "assets/tools/dynamicbind.webp",
+    "githubUrl": "https://github.com/biocheming/DynamicBind",
+    "linkType": "official"
+  },
+  {
+    "title": "DiffDock-L",
+    "description": "Dock a ligand onto any protein receptor with high accuracy.",
+    "categories": [
+      "Ligand/Drug Design & Screening",
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Protein–Ligand Docking",
+      "Virtual Screening"
+    ],
+    "beta": false,
+    "image": "assets/tools/diffdock-l.webp",
+    "githubUrl": "https://github.com/gcorso/DiffDock",
+    "linkType": "official"
+  },
+  {
+    "title": "RFantibody",
+    "description": "Generative antibody/nanobody design with fine-tuned RFdiffusion",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Antibodies",
+      "Other Binders",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/rfantibody.webp",
+    "githubUrl": "https://github.com/RosettaCommons/RFantibody",
+    "linkType": "official"
+  },
+  {
+    "title": "RFdiffusion3",
+    "description": "All-atom generative diffusion model for designing proteins, nucleic acid binders, and enzymes with precise non-protein interaction conditioning.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Peptides",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/rfdiffusion3.webp",
+    "githubUrl": "https://github.com/RosettaCommons/foundry",
+    "linkType": "official"
+  },
+  {
+    "title": "DISCO",
+    "description": "Joint protein sequence-structure co-design with ligand, RNA, and DNA conditioning in one diffusion workflow.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Nucleotides",
+      "Proteins",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/disco.webp",
+    "githubUrl": "https://github.com/DISCO-design/DISCO",
+    "linkType": "official"
+  },
+  {
+    "title": "RFdiffusion2",
+    "description": "Design functional enzymes from their reaction mechanisms using an atom-resolution generative model.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Enzymes",
+      "Peptides",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/rfdiffusion2.webp",
+    "githubUrl": "https://github.com/RosettaCommons/RFdiffusion2",
+    "linkType": "official"
+  },
+  {
+    "title": "RFdiffusion",
+    "description": "Design proteins, binders, and more with this protein diffusion model.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Peptides",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/rfdiffusion.webp",
+    "githubUrl": "https://github.com/RosettaCommons/RFdiffusion",
+    "linkType": "official"
+  },
+  {
+    "title": "OpenMM Molecular Dynamics",
+    "description": "Run all-atom OpenMM molecular dynamics simulations with staged minimization, NVT, NPT, and production MD.",
+    "categories": [
+      "Molecular Dynamics & Simulation"
+    ],
+    "tags": [
+      "Energy Minimization",
+      "Molecular Dynamics"
+    ],
+    "beta": false,
+    "image": "assets/tools/openmm-molecular-dynamics.webp",
+    "githubUrl": "https://github.com/openmm/openmm",
+    "linkType": "official"
+  },
+  {
+    "title": "Martini OpenMM Molecular Dynamics",
+    "description": "Run Martini coarse-grained OpenMM molecular dynamics simulations with staged minimization, NVT, NPT, and production MD.",
+    "categories": [
+      "Molecular Dynamics & Simulation"
+    ],
+    "tags": [
+      "Energy Minimization",
+      "Molecular Dynamics"
+    ],
+    "beta": false,
+    "image": "assets/tools/martini-openmm-molecular-dynamics.webp",
+    "githubUrl": "https://github.com/search?q=Martini+OpenMM+Molecular+Dynamics&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "GROMACS Molecular Dynamics",
+    "description": "Perform Molecular Dynamics using GROMACS framework, simulating many different solvent solute systems.",
+    "categories": [
+      "Molecular Dynamics & Simulation"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Energy Minimization",
+      "Free Energy / Binding Energy",
+      "Molecular Dynamics"
+    ],
+    "beta": false,
+    "image": "assets/tools/gromacs-molecular-dynamics.webp",
+    "githubUrl": "https://github.com/gromacs/gromacs",
+    "linkType": "official"
+  },
+  {
+    "title": "gmx_MMPBSA",
+    "description": "Calculate binding energetics for GROMACS trajectories using MMPBSA/MMGBSA calculations",
+    "categories": [
+      "Molecular Dynamics & Simulation"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Energy Minimization",
+      "Free Energy / Binding Energy",
+      "Molecular Dynamics"
+    ],
+    "beta": false,
+    "image": "assets/tools/gmx-mmpbsa.webp",
+    "githubUrl": "https://github.com/Valdes-Tresanco-MS/gmx_MMPBSA",
+    "linkType": "official"
+  },
+  {
+    "title": "Single-Point Energy Calculation",
+    "description": "Evaluate a fixed molecular geometry across a broad, provenance-rich catalog of electronic-structure methods and molecular potentials.",
+    "categories": [
+      "Ligand/Drug Design & Screening"
+    ],
+    "tags": [
+      "Free Energy / Binding Energy",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/single-point-energy-calculation.webp",
+    "githubUrl": "https://github.com/search?q=Single-Point+Energy+Calculation&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "Grid Inhomogeneous Solvation Theory (GIST)",
+    "description": "Simulate and map local binding-site hydration thermodynamics with a reproducible OpenMM and cpptraj GIST workflow.",
+    "categories": [
+      "Ligand/Drug Design & Screening",
+      "Molecular Dynamics & Simulation"
+    ],
+    "tags": [
+      "Free Energy / Binding Energy",
+      "Molecular Dynamics",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/grid-inhomogeneous-solvation-theory-gist.webp",
+    "githubUrl": "https://github.com/search?q=Grid+Inhomogeneous+Solvation+Theory+%28GIST%29&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "OpenFE Relative Binding Free Energy",
+    "description": "Rank a positioned ligand series with OpenFE relative binding free energy calculations.",
+    "categories": [
+      "Ligand/Drug Design & Screening",
+      "Molecular Dynamics & Simulation"
+    ],
+    "tags": [
+      "Free Energy / Binding Energy",
+      "Molecular Dynamics",
+      "Small Molecules"
+    ],
+    "beta": true,
+    "image": "assets/tools/openfe-relative-binding-free-energy.webp",
+    "githubUrl": "https://github.com/OpenFreeEnergy/openfe",
+    "linkType": "official"
+  },
+  {
+    "title": "OpenFE Absolute Binding Free Energy",
+    "description": "Compute an OpenFE absolute binding free energy from a positioned SDF ligand.",
+    "categories": [
+      "Ligand/Drug Design & Screening",
+      "Molecular Dynamics & Simulation"
+    ],
+    "tags": [
+      "Free Energy / Binding Energy",
+      "Molecular Dynamics",
+      "Small Molecules"
+    ],
+    "beta": true,
+    "image": "assets/tools/openfe-absolute-binding-free-energy.webp",
+    "githubUrl": "https://github.com/OpenFreeEnergy/openfe",
+    "linkType": "official"
+  },
+  {
+    "title": "OpenFE Hydration Free Energy",
+    "description": "Compute OpenFE hydration free energies for small molecules.",
+    "categories": [
+      "Ligand/Drug Design & Screening",
+      "Molecular Dynamics & Simulation"
+    ],
+    "tags": [
+      "Free Energy / Binding Energy",
+      "Molecular Dynamics",
+      "Small Molecules"
+    ],
+    "beta": true,
+    "image": "assets/tools/openfe-hydration-free-energy.webp",
+    "githubUrl": "https://github.com/OpenFreeEnergy/openfe",
+    "linkType": "official"
+  },
+  {
+    "title": "MDAnalysis Trajectory Analysis",
+    "description": "Post-process molecular-dynamics trajectories into stability, flexibility, exposure, contact, and secondary-structure CSV outputs.",
+    "categories": [
+      "Molecular Dynamics & Simulation"
+    ],
+    "tags": [
+      "Molecular Dynamics"
+    ],
+    "beta": false,
+    "image": "assets/tools/mdanalysis-trajectory-analysis.webp",
+    "githubUrl": "https://github.com/MDAnalysis/mdanalysis",
+    "linkType": "official"
+  },
+  {
+    "title": "Lacuna Cryptic Pocket Discovery",
+    "description": "Discover and rank cryptic protein pockets through conformational ensemble analysis.",
+    "categories": [
+      "Ligand/Drug Design & Screening",
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Binding Site Prediction",
+      "Conformation Generation",
+      "Proteins"
+    ],
+    "beta": true,
+    "image": "assets/tools/lacuna-cryptic-pocket-discovery.webp",
+    "githubUrl": "https://github.com/mooreneural/lacuna",
+    "linkType": "official"
+  },
+  {
+    "title": "ColabDock",
+    "description": "Accurately predict protein complexes with specialized restraints.",
+    "categories": [
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Proteins",
+      "Protein–Protein Docking"
+    ],
+    "beta": false,
+    "image": "assets/tools/colabdock.webp",
+    "githubUrl": "https://github.com/JeffSHF/ColabDock",
+    "linkType": "official"
+  },
+  {
+    "title": "RoseTTAFold3",
+    "description": "Open-source all-atom foundation model for structure prediction and generative design.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Co-Folding",
+      "Nucleotides",
+      "Protein Folding",
+      "Proteins",
+      "Protein–Ligand Docking",
+      "Protein–Protein Docking",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/rosettafold3.webp",
+    "githubUrl": "https://github.com/RosettaCommons/foundry",
+    "linkType": "official"
+  },
+  {
+    "title": "RoseTTAFold2",
+    "description": "Protein structure prediction that's faster than AlphaFold2 and just as accurate.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Protein Folding",
+      "Proteins",
+      "Protein–Protein Docking"
+    ],
+    "beta": false,
+    "image": "assets/tools/rosettafold2.webp",
+    "githubUrl": "https://github.com/uw-ipd/RoseTTAFold2",
+    "linkType": "official"
+  },
+  {
+    "title": "RoseTTAFold All-Atom",
+    "description": "Protein folding model that supports proteins, nucleotides, ligands, metal ions, and other small molecules.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Co-Folding",
+      "Nucleotides",
+      "Protein Folding",
+      "Proteins",
+      "Protein–Ligand Docking",
+      "Protein–Protein Docking",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/rosettafold-all-atom.webp",
+    "githubUrl": "https://github.com/baker-laboratory/RoseTTAFold-All-Atom",
+    "linkType": "official"
+  },
+  {
+    "title": "GenMol",
+    "description": "Generative AI for small molecule design and optimization.",
+    "categories": [
+      "Ligand/Drug Design & Screening"
+    ],
+    "tags": [
+      "Small Molecules",
+      "Virtual Screening"
+    ],
+    "beta": false,
+    "image": "assets/tools/genmol.webp",
+    "githubUrl": "https://github.com/NVIDIA-BioNeMo/genmol",
+    "linkType": "official"
+  },
+  {
+    "title": "PocketFlow",
+    "description": "PocketFlow is a Deep Generative Model that generates ligands for target protein binding pockets.",
+    "categories": [
+      "Ligand/Drug Design & Screening"
+    ],
+    "tags": [
+      "Small Molecules",
+      "Virtual Screening"
+    ],
+    "beta": false,
+    "image": "assets/tools/pocketflow.webp",
+    "githubUrl": "https://github.com/Saoge123/PocketFlow",
+    "linkType": "official"
+  },
+  {
+    "title": "PocketXMol | Dock",
+    "description": "Pocket-conditioned docking for small molecules or peptides.",
+    "categories": [
+      "Ligand/Drug Design & Screening",
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Peptides",
+      "Protein–Ligand Docking",
+      "Small Molecules",
+      "Virtual Screening"
+    ],
+    "beta": false,
+    "image": "assets/tools/pocketxmol-dock.webp",
+    "githubUrl": "https://github.com/pengxingang/PocketXMol",
+    "linkType": "official"
+  },
+  {
+    "title": "PocketXMol | Protein Design",
+    "description": "Pocket-conditioned peptide generation and redesign.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Generative Design",
+      "Inverse Folding",
+      "Peptides"
+    ],
+    "beta": false,
+    "image": "assets/tools/pocketxmol-protein-design.webp",
+    "githubUrl": "https://github.com/pengxingang/PocketXMol",
+    "linkType": "official"
+  },
+  {
+    "title": "PocketXMol | Small Molecule Design",
+    "description": "Pocket-conditioned small-molecule generation and fragment expansion.",
+    "categories": [
+      "Ligand/Drug Design & Screening"
+    ],
+    "tags": [
+      "Fragment Growing",
+      "Fragment Linking",
+      "Generative Design",
+      "Small Molecules",
+      "Virtual Screening"
+    ],
+    "beta": false,
+    "image": "assets/tools/pocketxmol-small-molecule-design.webp",
+    "githubUrl": "https://github.com/pengxingang/PocketXMol",
+    "linkType": "official"
+  },
+  {
+    "title": "EvoEF2",
+    "description": "Protein stability and binding energy analysis using EvoEF2.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Free Energy / Binding Energy",
+      "Proteins",
+      "Stability",
+      "Virtual Screening"
+    ],
+    "beta": false,
+    "image": "assets/tools/evoef2.webp",
+    "githubUrl": "https://github.com/tommyhuangthu/EvoEF2",
+    "linkType": "official"
+  },
+  {
+    "title": "EvoEF2 Mutant Stability Analysis",
+    "description": "Analyze the impact of mutations on protein stability using EvoEF2.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Free Energy / Binding Energy",
+      "Proteins",
+      "Stability",
+      "Virtual Screening"
+    ],
+    "beta": false,
+    "image": "assets/tools/evoef2-mutant-stability-analysis.webp",
+    "githubUrl": "https://github.com/tommyhuangthu/EvoEF2",
+    "linkType": "official"
+  },
+  {
+    "title": "Isoelectric Point Calculator",
+    "description": "Sequence-only pI/pKa prediction (IPC 1/2).",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Peptides",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/isoelectric-point-calculator.webp",
+    "githubUrl": "https://github.com/search?q=Isoelectric+Point+Calculator&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "QEPPI",
+    "description": "Screen and evaluate early-stage PPI-targeting compounds with a tailored drug-likeness index.",
+    "categories": [
+      "Ligand/Drug Design & Screening"
+    ],
+    "tags": [
+      "Small Molecules",
+      "Virtual Screening"
+    ],
+    "beta": false,
+    "image": "assets/tools/qeppi.webp",
+    "githubUrl": "https://github.com/ohuelab/QEPPI",
+    "linkType": "official"
+  },
+  {
+    "title": "ChemBounce",
+    "description": "Fragment-based molecular generation and optimization tool.",
+    "categories": [
+      "Ligand/Drug Design & Screening"
+    ],
+    "tags": [
+      "ADMET",
+      "Molecular Descriptors",
+      "Small Molecules",
+      "Synthetic Accessibility"
+    ],
+    "beta": false,
+    "image": "assets/tools/chembounce.webp",
+    "githubUrl": "https://github.com/jyryu3161/chembounce",
+    "linkType": "official"
+  },
+  {
+    "title": "Transcript Assembly",
+    "description": "Easily perform transcript quantification using an input fastq file.",
+    "categories": [
+      "Multi-omics"
+    ],
+    "tags": [
+      "RNA-seq",
+      "Transcript Assembly"
+    ],
+    "beta": false,
+    "image": "assets/tools/transcript-assembly.webp",
+    "githubUrl": "https://github.com/search?q=Transcript+Assembly&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "Interleaved FASTQ Splitter",
+    "description": "Split interleaved FASTQ into left/right FASTQ with validation.",
+    "categories": [
+      "Multi-omics",
+      "Utilities & Conversions"
+    ],
+    "tags": [
+      "File Conversion",
+      "RNA-seq",
+      "Transcript Assembly"
+    ],
+    "beta": false,
+    "image": "assets/tools/interleaved-fastq-splitter.webp",
+    "githubUrl": "https://github.com/search?q=Interleaved+FASTQ+Splitter&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "Evo 2",
+    "description": "Score genomic variants and generate DNA with Evo2.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Genomics",
+      "Nucleotides"
+    ],
+    "beta": false,
+    "image": "assets/tools/evo-2.webp",
+    "githubUrl": "https://github.com/ArcInstitute/evo2",
+    "linkType": "official"
+  },
+  {
+    "title": "LightDock",
+    "description": "Powerful molecular docking algorithm for proteins and nucleotides.",
+    "categories": [
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Proteins",
+      "Protein–Protein Docking"
+    ],
+    "beta": false,
+    "image": "assets/tools/lightdock.webp",
+    "githubUrl": "https://github.com/lightdock/lightdock",
+    "linkType": "official"
+  },
+  {
+    "title": "ESMFold",
+    "description": "Accurately predict protein structures at the atomic level using its amino acid sequence.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Protein Folding",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/esmfold.webp",
+    "githubUrl": "https://github.com/facebookresearch/esm",
+    "linkType": "official"
+  },
+  {
+    "title": "LigandMPNN",
+    "description": "Predict alternative sequences for an input protein structure with high accuracy. Also supports ProteinMPNN and SolubleMPNN.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Inverse Folding",
+      "Nucleotides",
+      "Proteins",
+      "Small Molecules",
+      "Solubility"
+    ],
+    "beta": false,
+    "image": "assets/tools/ligandmpnn.webp",
+    "githubUrl": "https://github.com/dauparas/LigandMPNN",
+    "linkType": "official"
+  },
+  {
+    "title": "ProteinMPNN",
+    "description": "Predict alternative sequences for an input protein structure with high accuracy. Also supports SolubleMPNN.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Inverse Folding",
+      "Proteins",
+      "Solubility"
+    ],
+    "beta": false,
+    "image": "assets/tools/proteinmpnn.webp",
+    "githubUrl": "https://github.com/dauparas/ProteinMPNN",
+    "linkType": "official"
+  },
+  {
+    "title": "NetSolP-1.0",
+    "description": "Accurately predict protein solubility and expression / usability from amino acid sequence.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Developability",
+      "Expression",
+      "Proteins",
+      "Solubility"
+    ],
+    "beta": false,
+    "image": "assets/tools/netsolp-1-0.webp",
+    "githubUrl": "https://github.com/teevee112/NetSolP-1.0",
+    "linkType": "official"
+  },
+  {
+    "title": "DEAnalysis",
+    "description": "Differential Expression Analysis pipeline configured for two-condition experiments.",
+    "categories": [
+      "Multi-omics"
+    ],
+    "tags": [
+      "Differential Expression",
+      "RNA-seq"
+    ],
+    "beta": false,
+    "image": "assets/tools/deanalysis.webp",
+    "githubUrl": "https://github.com/search?q=DEAnalysis&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "ESM-IF1",
+    "description": "Predict alternative sequences for an input protein structure with high accuracy.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Inverse Folding",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/esm-if1.webp",
+    "githubUrl": "https://github.com/facebookresearch/esm",
+    "linkType": "official"
+  },
+  {
+    "title": "MIF-ST",
+    "description": "Predict alternative sequences for an input protein structure with high accuracy.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Inverse Folding",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/mif-st.webp",
+    "githubUrl": "https://github.com/microsoft/protein-sequence-models",
+    "linkType": "official"
+  },
+  {
+    "title": "AfCycDesign",
+    "description": "Generates improved cyclic protein structures using a modified AlphaFold network.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Macrocyclic",
+      "Peptides",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/afcycdesign.webp",
+    "githubUrl": "https://github.com/search?q=AfCycDesign&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "AF2Bind",
+    "description": "Accurately predict small-molecule-binding residues using AlphaFold2 pairwise representation.",
+    "categories": [
+      "Ligand/Drug Design & Screening",
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Binding Site Prediction",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/af2bind.webp",
+    "githubUrl": "https://github.com/sokrypton/af2bind",
+    "linkType": "official"
+  },
+  {
+    "title": "ScanNet Protein Binding Site Prediction",
+    "description": "A geometric deep learning model for predicting binding site probability from a structure.",
+    "categories": [
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Antibodies",
+      "Binding Site Prediction",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/scannet-protein-binding-site-prediction.webp",
+    "githubUrl": "https://github.com/jertubiana/ScanNet",
+    "linkType": "official"
+  },
+  {
+    "title": "AFcluster",
+    "description": "Predict conformational substates using AlphaFold2 on multiple sequence alignments.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Conformation Generation",
+      "Protein Folding",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/afcluster.webp",
+    "githubUrl": "https://github.com/HWaymentSteele/AF_Cluster",
+    "linkType": "official"
+  },
+  {
+    "title": "Prodigy Binding Affinity Prediction",
+    "description": "PRODIGY predicts binding affinity and dissociation constants for protein–protein complexes based on their 3D structures.",
+    "categories": [
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Developability",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/prodigy-binding-affinity-prediction.webp",
+    "githubUrl": "https://github.com/haddocking/prodigy",
+    "linkType": "official"
+  },
+  {
+    "title": "PPAP",
+    "description": "A structure-aware deep learning model for high-accuracy protein-protein binding affinity prediction (Kd).",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/ppap.webp",
+    "githubUrl": "https://github.com/TEKHOO/PPAP",
+    "linkType": "official"
+  },
+  {
+    "title": "Interaction Analysis",
+    "description": "Detect and summarize molecular interactions across uploaded structures.",
+    "categories": [
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Nucleotides",
+      "Proteins",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/interaction-analysis.webp",
+    "githubUrl": "https://github.com/search?q=Interaction+Analysis&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "Interaction Fingerprint",
+    "description": "Compare protein-ligand interaction fingerprints across compounds with ProLIF.",
+    "categories": [
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Proteins",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/interaction-fingerprint.webp",
+    "githubUrl": "https://github.com/search?q=Interaction+Fingerprint&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "SPRINT",
+    "description": "SPRINT is a fast, accurate, and scalable deep learning framework for virtual screening of thousands of molecules.",
+    "categories": [
+      "Ligand/Drug Design & Screening",
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Proteins",
+      "Small Molecules",
+      "Virtual Screening"
+    ],
+    "beta": false,
+    "image": "assets/tools/sprint.webp",
+    "githubUrl": "https://github.com/abhinadduri/panspecies-dti",
+    "linkType": "official"
+  },
+  {
+    "title": "DNA Chisel Sequence Optimizer",
+    "description": "DnaChisel edits DNA sequences to satisfy biological constraints and optimize properties like codon usage, motif distribution, and GC content.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Codon Optimization",
+      "Expression"
+    ],
+    "beta": false,
+    "image": "assets/tools/dna-chisel-sequence-optimizer.webp",
+    "githubUrl": "https://github.com/Edinburgh-Genome-Foundry/DnaChisel",
+    "linkType": "official"
+  },
+  {
+    "title": "CodonTransformer",
+    "description": "A deep learning-based tool for multispecies codon optimization.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Codon Optimization",
+      "Expression"
+    ],
+    "beta": false,
+    "image": "assets/tools/codontransformer.webp",
+    "githubUrl": "https://github.com/Adibvafa/CodonTransformer",
+    "linkType": "official"
+  },
+  {
+    "title": "TIsigner Expression Optimization",
+    "description": "A nucleotide sequence based method for optimizing protein expression.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Codon Optimization",
+      "Expression",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/tisigner-expression-optimization.webp",
+    "githubUrl": "https://github.com/Gardner-BinfLab/TISIGNER",
+    "linkType": "official"
+  },
+  {
+    "title": "SoDoPE Solubility Optimization",
+    "description": "A sequence based method for optimizing protein solubility.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Developability",
+      "Proteins",
+      "Solubility"
+    ],
+    "beta": false,
+    "image": "assets/tools/sodope-solubility-optimization.webp",
+    "githubUrl": "https://github.com/Gardner-BinfLab/SoDoPE_paper_2020",
+    "linkType": "official"
+  },
+  {
+    "title": "Razor Signal Peptide Detection",
+    "description": "A sequence based method for detecting signal peptides.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Proteins",
+      "Signal Peptide Detection"
+    ],
+    "beta": false,
+    "image": "assets/tools/razor-signal-peptide-detection.webp",
+    "githubUrl": "https://github.com/Gardner-BinfLab/Razor",
+    "linkType": "official"
+  },
+  {
+    "title": "WoLF PSORT Protein Localization",
+    "description": "Predicts subcellular localization sites from protein sequence.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Protein Localization",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/wolf-psort-protein-localization.webp",
+    "githubUrl": "https://github.com/search?q=WoLF+PSORT+Protein+Localization&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "ProtNLM",
+    "description": "Predict protein annotations from sequence using ProtNLM.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/protnlm.webp",
+    "githubUrl": "https://github.com/google-research/google-research",
+    "linkType": "official"
+  },
+  {
+    "title": "ESM-2 for PTMs",
+    "description": "Predict potential post translational modification sites from sequence data.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "PTM Prediction",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/esm-2-for-ptms.webp",
+    "githubUrl": "https://github.com/search?q=ESM-2+for+PTMs&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "EnzBert E.C. Prediction",
+    "description": "Enzbert predicts enzymatic classes of protein sequences in batch or individually.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Enzymes",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/enzbert-e-c-prediction.webp",
+    "githubUrl": "https://github.com/realalanc/EnzBert",
+    "linkType": "official"
+  },
+  {
+    "title": "ClusterProt",
+    "description": "Cluster same length proteins using only their structures.",
+    "categories": [
+      "Utilities & Conversions"
+    ],
+    "tags": [
+      "Conformation Generation",
+      "Protein Clustering",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/clusterprot.webp",
+    "githubUrl": "https://github.com/search?q=ClusterProt&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "ITsFlexible",
+    "description": "A deep learning tool that predicts the conformational flexibility of antibody and T cell receptor (TCR) CDR3 loops, classifying them as 'rigid' or 'flexible'.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Antibodies",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/itsflexible.webp",
+    "githubUrl": "https://github.com/fspoendlin/ITsFlexible",
+    "linkType": "official"
+  },
+  {
+    "title": "CatPred",
+    "description": "A deep learning framework for predicting enzyme kinetic parameters (kcat, Km, Ki).",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Enzymes",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/catpred.webp",
+    "githubUrl": "https://github.com/maranasgroup/CatPred",
+    "linkType": "official"
+  },
+  {
+    "title": "RealKcat",
+    "description": "Predict kcat and Km class ranges from one enzyme sequence and a substrate panel.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Enzymes",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/realkcat.webp",
+    "githubUrl": "https://github.com/TKAI-LAB-Mali/RealKcat",
+    "linkType": "official"
+  },
+  {
+    "title": "DLKcat Kcat Prediction",
+    "description": "Predict Kcats of complexes using a protein sequence and compounds in SMILES format.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Developability",
+      "Enzymes",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/dlkcat-kcat-prediction.webp",
+    "githubUrl": "https://github.com/SysBioChalmers/DLKcat",
+    "linkType": "official"
+  },
+  {
+    "title": "TemStaPro Protein Thermostability Prediction",
+    "description": "TemStaPro predicts protein thermostability from sequence at a range of temperatures.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Developability",
+      "Proteins",
+      "Stability"
+    ],
+    "beta": false,
+    "image": "assets/tools/temstapro-protein-thermostability-prediction.webp",
+    "githubUrl": "https://github.com/ievapudz/TemStaPro",
+    "linkType": "official"
+  },
+  {
+    "title": "TEMPRO Nanobody Melting Temperature Prediction",
+    "description": "Predict nanobody melting temperature directly from amino-acid sequence.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Developability",
+      "Nanobodies",
+      "Stability"
+    ],
+    "beta": false,
+    "image": "assets/tools/tempro-nanobody-melting-temperature-prediction.webp",
+    "githubUrl": "https://github.com/Jerome-Alvarez/TEMPRO",
+    "linkType": "official"
+  },
+  {
+    "title": "eTox Drug Toxicity Prediction",
+    "description": "Predict Toxicity and Synthetic Accessibility from SMILES text or file inputs.",
+    "categories": [
+      "Ligand/Drug Design & Screening"
+    ],
+    "tags": [
+      "Molecular Descriptors",
+      "Synthetic Accessibility",
+      "Toxicity"
+    ],
+    "beta": false,
+    "image": "assets/tools/etox-drug-toxicity-prediction.webp",
+    "githubUrl": "https://github.com/pulimeng/eToxPred",
+    "linkType": "official"
+  },
+  {
+    "title": "ToxinPred Peptide Toxicity Prediction",
+    "description": "Predict peptide toxicity from single protein sequences or in batch using an accelerated algorithm.",
+    "categories": [
+      "Ligand/Drug Design & Screening",
+      "Protein Design"
+    ],
+    "tags": [
+      "Peptides",
+      "Toxicity"
+    ],
+    "beta": false,
+    "image": "assets/tools/toxinpred-peptide-toxicity-prediction.webp",
+    "githubUrl": "https://github.com/raghavagps/toxinpred3",
+    "linkType": "official"
+  },
+  {
+    "title": "AlphaFlow",
+    "description": "Use AlphaFlow to generate protein structures that closely reflect experimental and physiological conditions.",
+    "categories": [
+      "Molecular Dynamics & Simulation",
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Conformation Generation",
+      "Molecular Dynamics",
+      "Protein Folding"
+    ],
+    "beta": false,
+    "image": "assets/tools/alphaflow.webp",
+    "githubUrl": "https://github.com/bjing2016/alphaflow",
+    "linkType": "official"
+  },
+  {
+    "title": "AMBER Relaxation",
+    "description": "Relax a protein structure using an AMBER settling protocol.",
+    "categories": [
+      "Molecular Dynamics & Simulation"
+    ],
+    "tags": [
+      "Energy Minimization",
+      "Molecular Dynamics",
+      "Structure Fixing"
+    ],
+    "beta": false,
+    "image": "assets/tools/amber-relaxation.webp",
+    "githubUrl": "https://github.com/search?q=AMBER+Relaxation&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "CryoAtom Cryo-EM Model Builder",
+    "description": "CryoAtom builds atomic models from cryo-EM maps using local attention and 3D rotary position embedding, improving model completeness and speed while lowering resolution requirements.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Cryo-EM",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/cryoatom-cryo-em-model-builder.webp",
+    "githubUrl": "https://github.com/YangLab-SDU/CryoAtom",
+    "linkType": "official"
+  },
+  {
+    "title": "DeepEMhancer",
+    "description": "DeepEMhancer is a deep learning approach for automatic post-processing of cryo-EM maps, performing masking and sharpening in a single step to improve interpretability.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Cryo-EM",
+      "Nucleotides",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/deepemhancer.webp",
+    "githubUrl": "https://github.com/rsanchezgarc/deepEMhancer",
+    "linkType": "official"
+  },
+  {
+    "title": "Aggrescan3D",
+    "description": "Structure-based aggregation profiling with Aggrescan3D",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Aggregation Risk",
+      "Developability",
+      "Expression",
+      "Solubility"
+    ],
+    "beta": false,
+    "image": "assets/tools/aggrescan3d.webp",
+    "githubUrl": "https://github.com/search?q=Aggrescan3D&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "DeepViscosity",
+    "description": "Predict high-concentration monoclonal antibody viscosity classes.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Antibodies",
+      "Developability",
+      "Proteins",
+      "Viscosity"
+    ],
+    "beta": false,
+    "image": "assets/tools/deepviscosity.webp",
+    "githubUrl": "https://github.com/Lailabcode/DeepViscosity",
+    "linkType": "official"
+  },
+  {
+    "title": "DockQ",
+    "description": "Assess the quality of protein-protein docking models using the native and predicted structure.",
+    "categories": [
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/dockq.webp",
+    "githubUrl": "https://github.com/wallnerlab/DockQ",
+    "linkType": "official"
+  },
+  {
+    "title": "Protein Fold Stability Prediction",
+    "description": "Predict protein stability from structure using ESM-IF.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Developability",
+      "Proteins",
+      "Stability"
+    ],
+    "beta": false,
+    "image": "assets/tools/protein-fold-stability-prediction.webp",
+    "githubUrl": "https://github.com/KULL-Centre/_2024_cagiada_stability",
+    "linkType": "official"
+  },
+  {
+    "title": "Foldseek Structural Clustering",
+    "description": "Use the Foldseek easy-cluster algorthim to cluster structures using a representative structure.",
+    "categories": [
+      "Utilities & Conversions"
+    ],
+    "tags": [
+      "Protein Clustering",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/foldseek-structural-clustering.webp",
+    "githubUrl": "https://github.com/steineggerlab/foldseek",
+    "linkType": "official"
+  },
+  {
+    "title": "Foldtree",
+    "description": "Construct phylogenetic trees from protein structures using Foldseek.",
+    "categories": [
+      "Evolution & Phylogenetics"
+    ],
+    "tags": [
+      "Protein Clustering",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/foldtree.webp",
+    "githubUrl": "https://github.com/DessimozLab/fold_tree",
+    "linkType": "official"
+  },
+  {
+    "title": "EpHod Optimal Enzyme pH Prediction",
+    "description": "EpHod is a semi-supervised language model that predicts optimal pH for enzymes from sequence alone.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Developability",
+      "Enzymes",
+      "Proteins",
+      "Stability"
+    ],
+    "beta": false,
+    "image": "assets/tools/ephod-optimal-enzyme-ph-prediction.webp",
+    "githubUrl": "https://github.com/beckham-lab/EpHod",
+    "linkType": "official"
+  },
+  {
+    "title": "Immune Builder",
+    "description": "Design Antibodies, Nanobodies, and T-Cell Receptors using Immune Builder's state-of-the-art generative models.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Antibodies",
+      "Protein Folding",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/immune-builder.webp",
+    "githubUrl": "https://github.com/oxpig/ImmuneBuilder",
+    "linkType": "official"
+  },
+  {
+    "title": "ANARCI",
+    "description": "ANARCI provides standardized numbering and chain classification for antibody and TCR domains.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Antibodies",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/anarci.webp",
+    "githubUrl": "https://github.com/oxpig/ANARCI",
+    "linkType": "official"
+  },
+  {
+    "title": "ANARCII",
+    "description": "ANARCII is a language model–based tool for scalable, accurate numbering and classification of antibody and TCR repertoires.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Antibodies",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/anarcii.webp",
+    "githubUrl": "https://github.com/oxpig/ANARCII",
+    "linkType": "official"
+  },
+  {
+    "title": "PDB Animator",
+    "description": "Render animated GIF and MP4 files from multi-model PDB structures.",
+    "categories": [
+      "Utilities & Conversions"
+    ],
+    "tags": [
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/pdb-animator.webp",
+    "githubUrl": "https://github.com/search?q=PDB+Animator&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "Pangolin RNA Splicing Prediction",
+    "description": "Pangolin is a deep learning model to predict splice site strength and the impact of genetic variants on RNA splicing in multiple tissues.",
+    "categories": [
+      "Multi-omics"
+    ],
+    "tags": [
+      "Genomics"
+    ],
+    "beta": false,
+    "image": "assets/tools/pangolin-rna-splicing-prediction.webp",
+    "githubUrl": "https://github.com/tkzeng/Pangolin",
+    "linkType": "official"
+  },
+  {
+    "title": "DiffAb Antibody Design",
+    "description": "Design Antibodies for a target Antigen using the Antigen structure. DiffAb leverages a probabalistic diffusion model.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Antibodies",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/diffab-antibody-design.webp",
+    "githubUrl": "https://github.com/luost26/diffab",
+    "linkType": "official"
+  },
+  {
+    "title": "PDBFixer",
+    "description": "Fix common issues with PDB files such as missing atoms.",
+    "categories": [
+      "Utilities & Conversions"
+    ],
+    "tags": [
+      "Proteins",
+      "Structure Fixing"
+    ],
+    "beta": false,
+    "image": "assets/tools/pdbfixer.webp",
+    "githubUrl": "https://github.com/openmm/pdbfixer",
+    "linkType": "official"
+  },
+  {
+    "title": "PDB-mmCIF Converter",
+    "description": "Converts PDB files to CIF / mmCIF files and vice versa",
+    "categories": [
+      "Utilities & Conversions"
+    ],
+    "tags": [
+      "File Conversion",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/pdb-mmcif-converter.webp",
+    "githubUrl": "https://github.com/project-gemmi/gemmi",
+    "linkType": "official"
+  },
+  {
+    "title": "Chain Exporter",
+    "description": "Split one structure into separate chain-level PDB or mmCIF files.",
+    "categories": [
+      "Utilities & Conversions"
+    ],
+    "tags": [
+      "File Conversion",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/chain-exporter.webp",
+    "githubUrl": "https://github.com/search?q=Chain+Exporter&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "PDB-SDF Converter",
+    "description": "Converts PDB files to SDF files and vice versa",
+    "categories": [
+      "Utilities & Conversions"
+    ],
+    "tags": [
+      "File Conversion",
+      "Proteins",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/pdb-sdf-converter.webp",
+    "githubUrl": "https://github.com/rdkit/rdkit",
+    "linkType": "official"
+  },
+  {
+    "title": "PDB2PQR",
+    "description": "PDB2PQR converts PDB files to PQR format, adding missing atoms and assigning charges for electrostatics calculations.",
+    "categories": [
+      "Utilities & Conversions"
+    ],
+    "tags": [
+      "File Conversion",
+      "Proteins",
+      "Structure Fixing"
+    ],
+    "beta": false,
+    "image": "assets/tools/pdb2pqr.webp",
+    "githubUrl": "https://github.com/Electrostatics/pdb2pqr",
+    "linkType": "official"
+  },
+  {
+    "title": "PDB2Fasta",
+    "description": "Convert a PDB structure into FASTA sequences for each valid protein chain.",
+    "categories": [
+      "Utilities & Conversions"
+    ],
+    "tags": [
+      "File Conversion",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/pdb2fasta.webp",
+    "githubUrl": "https://github.com/search?q=PDB2Fasta&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "AutoDock Vina (smina)",
+    "description": "An enhanced fork of AutoDock Vina offering customizable scoring functions, improved sampling, and better performance for molecular docking simulations.",
+    "categories": [
+      "Ligand/Drug Design & Screening",
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Protein–Ligand Docking",
+      "Virtual Screening"
+    ],
+    "beta": false,
+    "image": "assets/tools/autodock-vina-smina.webp",
+    "githubUrl": "https://github.com/mwojcikowski/smina",
+    "linkType": "official"
+  },
+  {
+    "title": "Conformer Generator",
+    "description": "Generate conformers for small molecules and ligands using RDkit.",
+    "categories": [
+      "Ligand/Drug Design & Screening"
+    ],
+    "tags": [
+      "Conformation Generation",
+      "Free Energy / Binding Energy",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/conformer-generator.webp",
+    "githubUrl": "https://github.com/rdkit/rdkit",
+    "linkType": "official"
+  },
+  {
+    "title": "mmseqs2 MSA Generation",
+    "description": "Rapidly generate diverse and quality MSAs with support for various pairing modes.",
+    "categories": [
+      "Evolution & Phylogenetics",
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Multiple Sequence Alignment",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/mmseqs2-msa-generation.webp",
+    "githubUrl": "https://github.com/soedinglab/MMseqs2",
+    "linkType": "official"
+  },
+  {
+    "title": "USalign Structural Alignment",
+    "description": "Efficiently produce accurate 3D structural alignments across diverse macromolecular forms and configurations",
+    "categories": [
+      "Utilities & Conversions"
+    ],
+    "tags": [
+      "Proteins",
+      "Structural Alignment"
+    ],
+    "beta": false,
+    "image": "assets/tools/usalign-structural-alignment.webp",
+    "githubUrl": "https://github.com/pylelab/USalign",
+    "linkType": "official"
+  },
+  {
+    "title": "LDDT Structural Comparison",
+    "description": "Evaluate protein structure quality with a superposition-free local distance difference score",
+    "categories": [
+      "Utilities & Conversions"
+    ],
+    "tags": [
+      "Proteins",
+      "Structural Alignment"
+    ],
+    "beta": false,
+    "image": "assets/tools/lddt-structural-comparison.webp",
+    "githubUrl": "https://github.com/search?q=LDDT+Structural+Comparison&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "StaB-ddG",
+    "description": "Fast & accurate deep learning model for predicting binding ∆∆G using folding energy principles and a ProteinMPNN-based inverse folding framework.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Antibodies",
+      "Developability",
+      "Mutational Scanning",
+      "Other Binders",
+      "Peptides",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/stab-ddg.webp",
+    "githubUrl": "https://github.com/LDeng0205/StaB-ddG",
+    "linkType": "official"
+  },
+  {
+    "title": "PAMmla",
+    "description": "Machine learning models to predict SpCas9 PAM preference from amino acid sequence.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Enzymes",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/pammla.webp",
+    "githubUrl": "https://github.com/RachelSilverstein/PAMmla",
+    "linkType": "official"
+  },
+  {
+    "title": "PAMmla Evolve",
+    "description": "Evolve SpCas9 PAM preference using evolutionary algorithms.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Enzymes",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/pammla-evolve.webp",
+    "githubUrl": "https://github.com/RachelSilverstein/PAMmla",
+    "linkType": "official"
+  },
+  {
+    "title": "AntiFold",
+    "description": "Predict alternative sequences for an input Antibodies, Nanobodies, and Antigen-Antibody structures with high accuracy.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Antibodies",
+      "Inverse Folding"
+    ],
+    "beta": false,
+    "image": "assets/tools/antifold.webp",
+    "githubUrl": "https://github.com/oxpig/AntiFold",
+    "linkType": "official"
+  },
+  {
+    "title": "CryoSAMU",
+    "description": "CryoSAMU enhances intermediate-resolution cryo-EM maps using a structure-aware multimodal U-Net, integrating map features with protein language model embeddings for faster, high-quality results.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Cryo-EM",
+      "Nucleotides",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/cryosamu.webp",
+    "githubUrl": "https://github.com/chenwei-zhang/CryoSAMU",
+    "linkType": "official"
+  },
+  {
+    "title": "MUSCLE v5 MSA Generation",
+    "description": "Rapidly generate high-quality multiple sequence alignments for protein sequences.",
+    "categories": [
+      "Evolution & Phylogenetics",
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Multiple Sequence Alignment",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/muscle-v5-msa-generation.webp",
+    "githubUrl": "https://github.com/rcedgar/muscle",
+    "linkType": "official"
+  },
+  {
+    "title": "MAFFT MSA Generation",
+    "description": "Rapidly generate multiple sequence alignments for protein sequences.",
+    "categories": [
+      "Evolution & Phylogenetics",
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Multiple Sequence Alignment",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/mafft-msa-generation.webp",
+    "githubUrl": "https://github.com/search?q=MAFFT+MSA+Generation&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "ProteinMPNN-ddG",
+    "description": "An unsupervised deep learning model for rapid and accurate prediction of protein stability changes upon mutation, based on an improved ProteinMPNN methodology.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Antibodies",
+      "Developability",
+      "Mutational Scanning",
+      "Other Binders",
+      "Peptides",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/proteinmpnn-ddg.webp",
+    "githubUrl": "https://github.com/PeptoneLtd/proteinmpnn_ddg",
+    "linkType": "official"
+  },
+  {
+    "title": "OmegaFold",
+    "description": "Accurate de novo protein structure prediction without reliance on MSAs.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Protein Folding",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/omegafold.webp",
+    "githubUrl": "https://github.com/HeliXonProtein/OmegaFold",
+    "linkType": "official"
+  },
+  {
+    "title": "FastTree",
+    "description": "Rapidly infer maximum-likelihood phylogenetic trees for large sequence datasets.",
+    "categories": [
+      "Evolution & Phylogenetics"
+    ],
+    "tags": [
+      "Multiple Sequence Alignment",
+      "Phylogenetics",
+      "Tree Building"
+    ],
+    "beta": false,
+    "image": "assets/tools/fasttree.webp",
+    "githubUrl": "https://github.com/morgannprice/fasttree",
+    "linkType": "official"
+  },
+  {
+    "title": "Mordred Molecular Descriptor Calculator",
+    "description": "High-throughput descriptor engine for ML-ready molecular fingerprints.",
+    "categories": [
+      "Ligand/Drug Design & Screening"
+    ],
+    "tags": [
+      "Molecular Descriptors"
+    ],
+    "beta": false,
+    "image": "assets/tools/mordred-molecular-descriptor-calculator.webp",
+    "githubUrl": "https://github.com/JacksonBurns/mordred-community",
+    "linkType": "official"
+  },
+  {
+    "title": "ADMET-AI",
+    "description": "Predict ADMET properties swiftly and accurately using machine learning.",
+    "categories": [
+      "Ligand/Drug Design & Screening"
+    ],
+    "tags": [
+      "ADMET",
+      "Molecular Descriptors",
+      "Toxicity"
+    ],
+    "beta": false,
+    "image": "assets/tools/admet-ai.webp",
+    "githubUrl": "https://github.com/swansonk14/admet_ai",
+    "linkType": "official"
+  },
+  {
+    "title": "AllMetal3D",
+    "description": "Identify likely metal and water binding sites from a protein structure.",
+    "categories": [
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Binding Site Prediction",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/allmetal3d.webp",
+    "githubUrl": "https://github.com/lcbc-epfl/allmetal3d",
+    "linkType": "official"
+  },
+  {
+    "title": "Free Wilson Analysis",
+    "description": "Interpretable R-group SAR modeling and analog prioritization for congeneric small-molecule series.",
+    "categories": [
+      "Ligand/Drug Design & Screening"
+    ],
+    "tags": [
+      "Molecular Descriptors",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/free-wilson-analysis.webp",
+    "githubUrl": "https://github.com/search?q=Free+Wilson+Analysis&type=repositories",
+    "linkType": "search"
+  },
+  {
+    "title": "ThermoMPNN",
+    "description": "ThermoMPNN Predicts protein stability changes with precision and efficiency for mutation analysis and design.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Developability",
+      "Mutational Scanning",
+      "Proteins",
+      "Stability"
+    ],
+    "beta": false,
+    "image": "assets/tools/thermompnn.webp",
+    "githubUrl": "https://github.com/kuhlman-lab/ThermoMPNN",
+    "linkType": "official"
+  },
+  {
+    "title": "CAR-Toner",
+    "description": "CAR-Toner is an AI tool for rapid prediction of CAR-T tonic signaling by calculating Positively Charged Patch (PCP) scores.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Antibodies",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/car-toner.webp",
+    "githubUrl": "https://github.com/wt12318/CAR-Toner",
+    "linkType": "official"
+  },
+  {
+    "title": "RhoDesign RNA Inverse Folding",
+    "description": "Generates RNA sequences with precise structural fidelity and functional diversity for targeted applications",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Inverse Folding",
+      "Nucleotides"
+    ],
+    "beta": false,
+    "image": "assets/tools/rhodesign-rna-inverse-folding.webp",
+    "githubUrl": "https://github.com/ml4bio/RhoDesign",
+    "linkType": "official"
+  },
+  {
+    "title": "StrucTFactor",
+    "description": "StrucTFactor leverages 3D protein structures for precise transcription factor prediction, outperforming existing methods.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/structfactor.webp",
+    "githubUrl": "https://github.com/lieboldj/StrucTFactor",
+    "linkType": "official"
+  },
+  {
+    "title": "SaProt",
+    "description": "SaProt integrates sequence and structure information through a structure-aware vocabulary to predict protein properties accurately.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Binding Site Prediction",
+      "Developability",
+      "Proteins",
+      "Stability"
+    ],
+    "beta": false,
+    "image": "assets/tools/saprot.webp",
+    "githubUrl": "https://github.com/westlake-repl/SaProt",
+    "linkType": "official"
+  },
+  {
+    "title": "ProGen2",
+    "description": "Create protein variants using nothing but the amino acid sequence.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Antibodies",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/progen2.webp",
+    "githubUrl": "https://github.com/salesforce/progen",
+    "linkType": "official"
+  },
+  {
+    "title": "FlowDock",
+    "description": "FlowDock predicts protein-ligand structures and binding affinities using geometric flow matching, enabling multi-ligand docking and fast virtual drug screening.",
+    "categories": [
+      "Molecular Docking & Interactions"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Proteins",
+      "Protein–Ligand Docking",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/flowdock.webp",
+    "githubUrl": "https://github.com/BioinfoMachineLearning/FlowDock",
+    "linkType": "official"
+  },
+  {
+    "title": "ImaPEp Antibody-Antigen Binding Prediction",
+    "description": "ImaPEp predicts binding probabilities for antibody–antigen pairs by representing their binding interfaces as 2D images and leveraging convolutional neural networks.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Affinity Prediction",
+      "Antibodies",
+      "Developability",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/imapep-antibody-antigen-binding-prediction.webp",
+    "githubUrl": "https://github.com/3BioCompBio/ImaPEp",
+    "linkType": "official"
+  },
+  {
+    "title": "Efficient Evolution",
+    "description": "A protein language model-based tool for efficient, task-agnostic design of high-functionality protein variants.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Developability",
+      "Mutational Scanning",
+      "Proteins",
+      "Solubility",
+      "Stability"
+    ],
+    "beta": false,
+    "image": "assets/tools/efficient-evolution.webp",
+    "githubUrl": "https://github.com/brianhie/efficient-evolution",
+    "linkType": "official"
+  },
+  {
+    "title": "Humatch",
+    "description": "A CNN-based tool for rapid, gene-specific humanization and classification of antibody heavy and light chains.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Antibodies",
+      "Developability",
+      "Immunogenicity",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/humatch.webp",
+    "githubUrl": "https://github.com/oxpig/Humatch",
+    "linkType": "official"
+  },
+  {
+    "title": "DeepImmuno Immunogenicity Prediction",
+    "description": "DeepImmuno is a CNN-based model for peptide immunogenicity prediction with state-of-the-art accuracy across viral and cancer datasets.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Developability",
+      "Immunogenicity",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/deepimmuno-immunogenicity-prediction.webp",
+    "githubUrl": "https://github.com/frankligy/DeepImmuno",
+    "linkType": "official"
+  },
+  {
+    "title": "BioPhi",
+    "description": "AI-driven antibody humanization + humanness scoring from natural repertoire data.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Antibodies",
+      "Developability",
+      "Immunogenicity",
+      "Other Binders",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/biophi.webp",
+    "githubUrl": "https://github.com/Merck/BioPhi",
+    "linkType": "official"
+  },
+  {
+    "title": "DR-BERT",
+    "description": "Efficiently annotate disordered protein regions with a compact language model.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/dr-bert.webp",
+    "githubUrl": "https://github.com/maslov-group/DR-BERT",
+    "linkType": "official"
+  },
+  {
+    "title": "ProSST Mutation Effect Prediction",
+    "description": "ProSST predicts protein mutation effects and functions by integrating sequence and structural data via quantized tokens and disentangled attention.",
+    "categories": [
+      "Protein Design",
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Mutational Scanning",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/prosst-mutation-effect-prediction.webp",
+    "githubUrl": "https://github.com/ai4protein/ProSST",
+    "linkType": "official"
+  },
+  {
+    "title": "ParaSurf",
+    "description": "ParaSurf is a deep learning framework that predicts paratope binding sites by analyzing molecular surfaces of antibodies/nanobodies to identify antigen-binding regions across the entire Fab/Fv domain.",
+    "categories": [
+      "Sequence Analysis & Annotation"
+    ],
+    "tags": [
+      "Antibodies",
+      "Binding Site Prediction",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/parasurf.webp",
+    "githubUrl": "https://github.com/aggelos-michael-papadopoulos/ParaSurf",
+    "linkType": "official"
+  },
+  {
+    "title": "Kluster",
+    "description": "Protein structure clustering and visualization tool using TM-align/US-align structural alignment and dimensionality reduction techniques (UMAP, t-SNE, PCA).",
+    "categories": [
+      "Utilities & Conversions"
+    ],
+    "tags": [
+      "Conformation Generation",
+      "Protein Clustering",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/kluster.webp",
+    "githubUrl": "https://github.com/Danialgharaie/kluster",
+    "linkType": "official"
+  },
+  {
+    "title": "AlphaFind",
+    "description": "Fast structure similarity search across AlphaFold DB.",
+    "categories": [
+      "Evolution & Phylogenetics"
+    ],
+    "tags": [
+      "Protein Clustering",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/alphafind.webp",
+    "githubUrl": "https://github.com/Coda-Research-Group/AlphaFind",
+    "linkType": "official"
+  },
+  {
+    "title": "Boltz-1 (AlphaFold3)",
+    "description": "An open-source version of AlphaFold3 developed by an MIT lab.",
+    "categories": [
+      "Structure Prediction & Folding"
+    ],
+    "tags": [
+      "Co-Folding",
+      "Conformation Generation",
+      "Macrocyclic",
+      "Nucleotides",
+      "Protein Folding",
+      "Proteins",
+      "Protein–Ligand Docking",
+      "Protein–Protein Docking",
+      "Small Molecules"
+    ],
+    "beta": false,
+    "image": "assets/tools/boltz-1-alphafold3.webp",
+    "githubUrl": "https://github.com/jwohlwend/boltz",
+    "linkType": "official"
+  },
+  {
+    "title": "ABACUS-R Sequence Design",
+    "description": "Use ABACUS-R to design protein sequences for a given backbone structure using an encoder-decoder model.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Inverse Folding",
+      "Proteins"
+    ],
+    "beta": false,
+    "image": "assets/tools/abacus-r-sequence-design.webp",
+    "githubUrl": "https://github.com/JWei2015/ABACUS-R",
+    "linkType": "official"
+  },
+  {
+    "title": "NeuroFold",
+    "description": "Optimize enzyme thermostability, pH stability, solubility, and reaction rate with high accuracy.",
+    "categories": [
+      "Protein Design"
+    ],
+    "tags": [
+      "Developability",
+      "Enzymes",
+      "Proteins",
+      "Solubility",
+      "Stability"
+    ],
+    "beta": false,
+    "image": "assets/tools/neurofold.webp",
+    "githubUrl": "https://github.com/search?q=NeuroFold&type=repositories",
+    "linkType": "search"
+  }
+]

@@ -211,14 +211,14 @@ class ToolsPageTests(unittest.TestCase):
         expect(nav).to_be_hidden()
         expect(menu).to_have_attribute("aria-label", "Open navigation")
         expect(menu).to_have_attribute("title", "Open navigation")
+        self.assertTrue(self.page.evaluate("document.documentElement.scrollWidth <= innerWidth"))
+        self.assertLess(self.page.locator("[data-tool-card]").first.bounding_box()["y"], 844)
 
         menu.click()
         self.page.set_viewport_size({"width": 900, "height": 844})
         expect(menu).to_have_attribute("aria-expanded", "false")
         expect(menu).to_have_attribute("aria-label", "Open navigation")
         expect(menu).to_have_attribute("title", "Open navigation")
-        self.assertTrue(self.page.evaluate("document.documentElement.scrollWidth <= innerWidth"))
-        self.assertLess(self.page.locator("[data-tool-card]").first.bounding_box()["y"], 844)
 
     def test_mobile_navigation_preserves_brand_row_position(self):
         self.page.set_viewport_size({"width": 390, "height": 844})

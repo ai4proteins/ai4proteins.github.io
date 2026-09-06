@@ -19,12 +19,30 @@ async function serve(handler) {
   };
 }
 
+function holdResponseOpen(response, status, headers = {}) {
+  const closed = new Promise((resolve) => response.once('close', resolve));
+  const interval = setInterval(() => response.write('still open'), 25);
+  response.once('close', () => clearInterval(interval));
+  response.writeHead(status, headers);
+  response.write('discarded body');
+  return closed;
+}
+
+async function assertResponseClosedPromptly(closed) {
+  const result = await Promise.race([
+    closed.then(() => true),
+    new Promise((resolve) => setTimeout(() => resolve(false), 200)),
+  ]);
+  assert.equal(result, true, 'discarded response body must be canceled promptly');
+}
+
 test('follows a same-origin redirect and returns the response bytes', async (t) => {
   const requests = [];
+  let redirectClosed;
   const server = await serve((request, response) => {
     requests.push(request.url);
     if (request.url === '/start') {
-      response.writeHead(302, { location: '/catalog' }).end();
+      redirectClosed = holdResponseOpen(response, 302, { location: '/catalog' });
       return;
     }
     response.end('catalog bytes');
@@ -39,6 +57,7 @@ test('follows a same-origin redirect and returns the response bytes', async (t) 
 
   assert.equal(bytes.toString(), 'catalog bytes');
   assert.deepEqual(requests, ['/start', '/catalog']);
+  await assertResponseClosedPromptly(redirectClosed);
 });
 
 test('rejects a cross-origin redirect without requesting its target', async (t) => {
@@ -48,8 +67,9 @@ test('rejects a cross-origin redirect without requesting its target', async (t) 
     response.end('must not be requested');
   });
   t.after(target.close);
+  let redirectClosed;
   const source = await serve((_request, response) => {
-    response.writeHead(302, { location: `${target.origin}/escaped` }).end();
+    redirectClosed = holdResponseOpen(response, 302, { location: `${target.origin}/escaped` });
   });
   t.after(source.close);
 
@@ -62,6 +82,25 @@ test('rejects a cross-origin redirect without requesting its target', async (t) 
     /allowed origin/,
   );
   assert.equal(targetRequests, 0);
+  await assertResponseClosedPromptly(redirectClosed);
+});
+
+test('cancels an HTTP error response before rejecting it', async (t) => {
+  let responseClosed;
+  const server = await serve((_request, response) => {
+    responseClosed = holdResponseOpen(response, 503);
+  });
+  t.after(server.close);
+
+  await assert.rejects(
+    fetchBytes(`${server.origin}/unavailable`, {
+      allowedOrigin: server.origin,
+      maxBytes: 1024,
+      timeoutMs: 1000,
+    }),
+    /Request failed: 503/,
+  );
+  await assertResponseClosedPromptly(responseClosed);
 });
 
 test('applies one timeout while reading the response body', async (t) => {
@@ -83,9 +122,9 @@ test('applies one timeout while reading the response body', async (t) => {
 });
 
 test('rejects a declared body larger than the maximum', async (t) => {
+  let responseClosed;
   const server = await serve((_request, response) => {
-    response.writeHead(200, { 'content-length': '2048' });
-    response.end('small');
+    responseClosed = holdResponseOpen(response, 200, { 'content-length': '2048' });
   });
   t.after(server.close);
 
@@ -97,6 +136,7 @@ test('rejects a declared body larger than the maximum', async (t) => {
     }),
     /maximum of 1024 bytes/,
   );
+  await assertResponseClosedPromptly(responseClosed);
 });
 
 test('rejects a streamed body once it exceeds the maximum', async (t) => {

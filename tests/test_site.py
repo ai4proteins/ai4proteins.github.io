@@ -194,6 +194,9 @@ class ToolsPageTests(unittest.TestCase):
         expect(menu).to_have_attribute("title", "Open navigation")
 
         menu.click()
+        focused_link = nav.get_by_role("link", name="Papers", exact=True)
+        focused_link.focus()
+        expect(focused_link).to_be_focused()
         self.page.keyboard.press("Escape")
         expect(nav).to_be_hidden()
         expect(menu).to_have_attribute("aria-label", "Open navigation")

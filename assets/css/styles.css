@@ -119,7 +119,7 @@ h1 { font-size: 30px; line-height: 1.25; font-weight: 650; margin: 0 0 24px; }
 @media (max-width: 760px) {
   .container { width: calc(100% - 36px); }
   .header-inner { min-height: 68px; flex-wrap: wrap; gap: 0; }
-  .brand { font-size: 22px; }
+  .brand { font-size: 22px; min-height: 68px; }
   .brand img { width: 38px; height: 38px; }
   .menu-button { display: inline-flex; }
   .primary-navigation { display: none; width: 100%; flex-direction: column; gap: 0; padding-block: 8px 16px; }

@@ -131,6 +131,18 @@ class ToolsPageTests(unittest.TestCase):
         self.assertTrue(self.page.evaluate("document.documentElement.scrollWidth <= innerWidth"))
         self.assertLess(self.page.locator("[data-tool-card]").first.bounding_box()["y"], 844)
 
+    def test_mobile_navigation_preserves_brand_row_position(self):
+        self.page.set_viewport_size({"width": 390, "height": 844})
+        self.open_catalog()
+        brand = self.page.get_by_role("link", name="AI4Protein home")
+        menu = self.page.get_by_role("button", name="Open navigation")
+        before = [brand.bounding_box(), menu.bounding_box()]
+        menu.click()
+        expect(self.page.get_by_role("navigation", name="Primary")).to_be_visible()
+        for element, closed_box in zip([brand, menu], before):
+            self.assertEqual(element.bounding_box(), closed_box,
+                             "Opening navigation must not move or resize the brand row")
+
     def test_placeholder_routes_have_only_the_requested_shell(self):
         routes = {
             "/papers/": "Papers",

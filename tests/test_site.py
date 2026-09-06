@@ -131,6 +131,30 @@ class ToolsPageTests(unittest.TestCase):
         self.assertTrue(self.page.evaluate("document.documentElement.scrollWidth <= innerWidth"))
         self.assertLess(self.page.locator("[data-tool-card]").first.bounding_box()["y"], 844)
 
+    def test_placeholder_routes_have_only_the_requested_shell(self):
+        routes = {
+            "/papers/": "Papers",
+            "/molecules/": "Molecules",
+            "/structure-prediction/": "Structure Prediction",
+            "/design/": "Design",
+            "/property/": "Property",
+        }
+        for route, title in routes.items():
+            with self.subTest(route=route):
+                self.page.goto(self.base_url + route)
+                self.assertEqual(self.page.title(), f"{title} | AI4Protein")
+                self.assertEqual(self.page.get_by_role("heading", name=title).count(), 1)
+                self.assertEqual(
+                    self.page.get_by_role("link", name=title, exact=True).get_attribute("aria-current"),
+                    "page",
+                )
+                self.assertEqual(
+                    self.page.locator('nav[aria-label="Primary"] [aria-current="page"]').count(),
+                    1,
+                )
+                self.assertEqual(self.page.locator("main > *").count(), 1)
+                self.assertEqual(self.page.locator("main").inner_text().strip(), title)
+
     def test_loading_resolves_to_catalog(self):
         pending = []
         self.page.route("**/data/tools.json", lambda route: pending.append(route))

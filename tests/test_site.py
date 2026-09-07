@@ -53,7 +53,7 @@ class ToolsPageTests(unittest.TestCase):
 
     def open_catalog(self):
         self.page.goto(self.base_url)
-        expect(self.page.locator("[data-tool-card]")).to_have_count(156)
+        expect(self.page.locator("[data-tool-card]")).to_have_count(130)
 
     def test_tools_render_and_search(self):
         self.open_catalog()
@@ -86,7 +86,7 @@ class ToolsPageTests(unittest.TestCase):
         expect(self.page.locator("[data-tool-card]")).to_have_count(category_count)
         self.page.get_by_role("searchbox", name="Search tools").fill("no-such-tool-897")
         self.page.get_by_role("button", name="Clear filters", exact=True).click()
-        expect(self.page.locator("[data-tool-card]")).to_have_count(156)
+        expect(self.page.locator("[data-tool-card]")).to_have_count(130)
         expect(category).to_have_attribute("aria-pressed", "false")
         expect(self.page.get_by_role("searchbox", name="Search tools")).to_have_value("")
 
@@ -97,27 +97,59 @@ class ToolsPageTests(unittest.TestCase):
         expect(self.page.get_by_role("heading", name="No tools found")).to_be_visible()
         expect(self.page.get_by_role("status")).to_contain_text("0 tools")
         self.page.get_by_role("button", name="Clear search", exact=True).click()
-        expect(self.page.locator("[data-tool-card]")).to_have_count(156)
+        expect(self.page.locator("[data-tool-card]")).to_have_count(130)
 
     def test_cards_are_safe_github_links(self):
         self.open_catalog()
         cards = self.page.locator("[data-tool-card]")
         for card in cards.all():
-            self.assertTrue(card.get_attribute("href").startswith("https://github.com/"))
+            self.assertRegex(card.get_attribute("href"), r"^https://github\.com/[^/?#]+/[^/?#]+$")
             self.assertEqual(card.get_attribute("target"), "_blank")
             self.assertIn("noopener", card.get_attribute("rel"))
             self.assertIn("noreferrer", card.get_attribute("rel"))
-            self.assertRegex(card.inner_text(), r"official repository|GitHub repository search")
-            self.assertTrue(card.locator("img").get_attribute("src").startswith("assets/tools/"))
-            self.assertEqual(card.locator("img").get_attribute("loading"), "lazy")
+            self.assertEqual(card.locator(".visually-hidden").inner_text(), "official repository")
+            image = card.locator("img")
+            self.assertRegex(image.get_attribute("src"), r"^assets/tools/.+\.png$")
+            self.assertEqual(image.get_attribute("loading"), "lazy")
+            self.assertEqual(image.get_attribute("width"), "1200")
+            self.assertEqual(image.get_attribute("height"), "600")
         images = cards.locator("img")
-        expect(images).to_have_count(156)
-        decoded = images.evaluate_all("""images => Promise.all(images.map(async (image) => {
-            image.loading = 'eager';
-            await image.decode();
-            return image.complete && image.naturalWidth > 0;
-        }))""")
-        self.assertEqual(decoded, [True] * 156)
+        expect(images).to_have_count(130)
+        image_details = images.evaluate_all("""async images => {
+            const details = [];
+            for (const image of images) {
+                image.scrollIntoView({ block: 'center' });
+                await new Promise((resolve) => requestAnimationFrame(
+                    () => requestAnimationFrame(resolve)
+                ));
+                try {
+                    await image.decode();
+                    details.push({
+                        src: image.getAttribute('src'),
+                        decoded: image.complete && image.naturalWidth === 1200 && image.naturalHeight === 600,
+                    });
+                } catch (error) {
+                    details.push({
+                        src: image.getAttribute('src'),
+                        decoded: false,
+                        error: `${error.name}: ${error.message}`,
+                    });
+                }
+            }
+            return details;
+        }""")
+        failures = [image for image in image_details if not image["decoded"]]
+        self.assertEqual(failures, [])
+
+    def test_card_images_render_at_two_to_one(self):
+        self.open_catalog()
+        ratios = self.page.locator("[data-tool-card] img").evaluate_all("""images => images.map((image) => {
+            const box = image.getBoundingClientRect();
+            return box.width / box.height;
+        })""")
+        self.assertEqual(len(ratios), 130)
+        for ratio in ratios:
+            self.assertAlmostEqual(ratio, 2.0, delta=0.01)
 
     def test_search_boundary_has_non_text_contrast(self):
         self.open_catalog()
@@ -264,7 +296,7 @@ class ToolsPageTests(unittest.TestCase):
         self.page.wait_for_timeout(100)
         self.assertEqual(len(pending), 1)
         pending[0].fulfill(path=str(ROOT / "data/tools.json"), content_type="application/json")
-        expect(self.page.locator("[data-tool-card]")).to_have_count(156)
+        expect(self.page.locator("[data-tool-card]")).to_have_count(130)
         expect(self.page.get_by_role("status")).not_to_contain_text("Loading")
 
     def test_fetch_error_replaces_loading(self):

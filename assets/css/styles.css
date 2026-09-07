@@ -83,7 +83,7 @@ h1 { font-size: 30px; line-height: 1.25; font-weight: 650; margin: 0 0 24px; }
 .tool-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; align-items: stretch; }
 .tool-card { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: white; display: flex; flex-direction: column; text-decoration: none; transition: border-color 140ms, box-shadow 140ms; }
 .tool-card:hover { border-color: #80b8d7; box-shadow: 0 3px 12px #10243e10; }
-.tool-card > img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: #edf3f8; border-bottom: 1px solid var(--line); }
+.tool-card > img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: contain; background: #edf3f8; border-bottom: 1px solid var(--line); }
 .tool-card-body { display: flex; flex-direction: column; gap: 12px; flex: 1; padding: 17px; }
 .card-title { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .card-title h2 { margin: 0; font-size: 17px; line-height: 1.4; font-weight: 650; min-width: 0; }

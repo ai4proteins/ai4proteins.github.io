@@ -127,8 +127,8 @@ function createCard(tool) {
   image.src = tool.image;
   image.alt = '';
   image.loading = 'lazy';
-  image.width = 640;
-  image.height = 360;
+  image.width = 1200;
+  image.height = 600;
   card.append(image);
 
   const body = document.createElement('div');
@@ -160,7 +160,7 @@ function createCard(tool) {
   }
   const repositoryLabel = document.createElement('span');
   repositoryLabel.className = 'visually-hidden';
-  repositoryLabel.textContent = tool.linkType === 'official' ? 'official repository' : 'GitHub repository search';
+  repositoryLabel.textContent = 'official repository';
   body.append(titleRow, description, categories, repositoryLabel);
   card.append(body);
   return card;

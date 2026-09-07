@@ -1,7 +1,8 @@
-import { mkdir, mkdtemp, readFile, rename, rm, writeFile } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isGithubPreviewPng } from './catalog-image.mjs';
+import { replaceOutputs, withStageCleanup } from './catalog-output.mjs';
 import {
   assetFilename,
   githubRepositoryParts,
@@ -24,35 +25,7 @@ function repositoryKey(repositoryUrl) {
   return `https://github.com/${owner.toLowerCase()}/${repository.toLowerCase()}`;
 }
 
-async function replaceOutputs(outputs) {
-  const backups = [];
-  const installed = [];
-
-  try {
-    for (const output of outputs) {
-      await mkdir(dirname(output.target), { recursive: true });
-      try {
-        await rename(output.target, output.backup);
-        backups.push(output);
-      } catch (error) {
-        if (error.code !== 'ENOENT') throw error;
-      }
-    }
-
-    for (const output of outputs) {
-      await rename(output.source, output.target);
-      installed.push(output);
-    }
-  } catch (error) {
-    await Promise.all(installed.map(({ target }) => rm(target, { force: true, recursive: true })));
-    await Promise.all(backups.map(({ backup, target }) => rename(backup, target)));
-    throw error;
-  }
-
-  await Promise.all(backups.map(({ backup }) => rm(backup, { force: true, recursive: true })));
-}
-
-try {
+await withStageCleanup(stagePath, async () => {
   const overrides = JSON.parse(await readFile(overridesPath, 'utf8'));
   const catalogBytes = await fetchBytes('https://neurosnap.ai/api/services', {
     allowedOrigin,
@@ -107,6 +80,4 @@ try {
       backup: join(stagePath, 'previous-tool-images'),
     },
   ]);
-} finally {
-  await rm(stagePath, { force: true, recursive: true });
-}
+});

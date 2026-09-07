@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { crc32, deflateSync } from 'node:zlib';
 import {
   downloadRepositoryPreviews,
   fetchGithubPreview,
@@ -12,6 +13,7 @@ function pngChunk(type, data = Buffer.alloc(0)) {
   chunk.writeUInt32BE(data.length, 0);
   chunk.write(type, 4, 4, 'ascii');
   data.copy(chunk, 8);
+  chunk.writeUInt32BE(crc32(chunk.subarray(4, 8 + data.length)), 8 + data.length);
   return chunk;
 }
 
@@ -21,10 +23,12 @@ function validPreviewPng(marker = 1) {
   header.writeUInt32BE(600, 4);
   header[8] = 8;
   header[9] = 2;
+  const scanlines = Buffer.alloc((1 + 1200 * 3) * 600);
+  scanlines[1] = marker;
   return Buffer.concat([
     PNG_SIGNATURE,
     pngChunk('IHDR', header),
-    pngChunk('IDAT', Buffer.from([marker])),
+    pngChunk('IDAT', deflateSync(scanlines)),
     pngChunk('IEND'),
   ]);
 }

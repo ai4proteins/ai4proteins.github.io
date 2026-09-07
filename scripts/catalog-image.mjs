@@ -1,4 +1,32 @@
+import { crc32, inflateSync } from 'node:zlib';
+
 const PNG_SIGNATURE = Buffer.from('89504e470d0a1a0a', 'hex');
+
+function scanlineBytes(ihdr) {
+  const bitDepth = ihdr[8];
+  const colorType = ihdr[9];
+  const channelsByColorType = new Map([
+    [0, 1],
+    [2, 3],
+    [3, 1],
+    [4, 2],
+    [6, 4],
+  ]);
+  const validBitDepths = new Map([
+    [0, new Set([1, 2, 4, 8, 16])],
+    [2, new Set([8, 16])],
+    [3, new Set([1, 2, 4, 8])],
+    [4, new Set([8, 16])],
+    [6, new Set([8, 16])],
+  ]);
+
+  if (!validBitDepths.get(colorType)?.has(bitDepth)
+    || ihdr[10] !== 0
+    || ihdr[11] !== 0
+    || ihdr[12] !== 0) return undefined;
+
+  return Math.ceil(1200 * channelsByColorType.get(colorType) * bitDepth / 8);
+}
 
 export function isGithubPreviewPng(payload) {
   if (!Buffer.isBuffer(payload) || payload.length < PNG_SIGNATURE.length) return false;
@@ -7,6 +35,9 @@ export function isGithubPreviewPng(payload) {
   let offset = PNG_SIGNATURE.length;
   let chunkIndex = 0;
   let hasImageData = false;
+  let imageDataEnded = false;
+  let rowBytes;
+  const compressedParts = [];
 
   while (offset < payload.length) {
     if (payload.length - offset < 12) return false;
@@ -17,19 +48,47 @@ export function isGithubPreviewPng(payload) {
     const type = payload.subarray(offset + 4, offset + 8).toString('ascii');
     const dataOffset = offset + 8;
     const nextOffset = offset + 12 + dataLength;
+    const storedCrc = payload.readUInt32BE(dataOffset + dataLength);
+    const computedCrc = crc32(payload.subarray(offset + 4, dataOffset + dataLength));
+    if (storedCrc !== computedCrc) return false;
 
     if (chunkIndex === 0) {
       if (type !== 'IHDR' || dataLength !== 13) return false;
       if (payload.readUInt32BE(dataOffset) !== 1200
         || payload.readUInt32BE(dataOffset + 4) !== 600) return false;
+      rowBytes = scanlineBytes(payload.subarray(dataOffset, dataOffset + dataLength));
+      if (rowBytes === undefined) return false;
     } else if (type === 'IHDR') {
       return false;
     }
 
-    if (type === 'IDAT' && dataLength > 0) hasImageData = true;
-    if (type === 'IEND') {
-      return dataLength === 0 && hasImageData && nextOffset === payload.length;
+    if (type === 'IDAT') {
+      if (imageDataEnded) return false;
+      if (dataLength > 0) hasImageData = true;
+      compressedParts.push(payload.subarray(dataOffset, dataOffset + dataLength));
+    } else if (hasImageData) {
+      imageDataEnded = true;
     }
+    if (type === 'IEND') {
+      if (dataLength !== 0 || !hasImageData || nextOffset !== payload.length) return false;
+
+      const expectedLength = (rowBytes + 1) * 600;
+      let scanlines;
+      try {
+        scanlines = inflateSync(Buffer.concat(compressedParts), {
+          maxOutputLength: expectedLength,
+        });
+      } catch {
+        return false;
+      }
+      if (scanlines.length !== expectedLength) return false;
+      for (let row = 0; row < 600; row += 1) {
+        if (scanlines[row * (rowBytes + 1)] > 4) return false;
+      }
+      return true;
+    }
+
+    if (/^[A-Z]/.test(type) && !['IHDR', 'PLTE', 'IDAT'].includes(type)) return false;
 
     offset = nextOffset;
     chunkIndex += 1;

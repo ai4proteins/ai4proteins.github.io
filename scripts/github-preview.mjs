@@ -8,6 +8,7 @@ const REQUEST_TIMEOUT_MS = 30_000;
 const REQUEST_SPACING_MS = 750;
 const MAX_ATTEMPTS = 4;
 const MAX_RETRY_DELAY_MS = 65_000;
+const RETRYABLE_STATUSES = new Set([429, 500, 502, 503, 504]);
 
 function waitFor(milliseconds) {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -19,7 +20,7 @@ function repositoryKey(repositoryUrl) {
 }
 
 function isRetryable(error) {
-  return error?.status === 429 || (error?.status >= 500 && error.status <= 599);
+  return RETRYABLE_STATUSES.has(error?.status);
 }
 
 export async function fetchGithubPreview(repositoryUrl, {

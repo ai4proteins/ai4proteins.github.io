@@ -73,7 +73,7 @@ test('downloads each repository once with 750ms between unique request starts', 
   assert.deepEqual(waits, [750]);
 });
 
-test('retries 429 and 5xx responses then returns the downloaded buffer', async () => {
+test('retries 429 and retryable server responses then returns the downloaded buffer', async () => {
   const preview = validPreviewPng();
   const responses = [httpError(429, 5000), httpError(500), preview];
   const waits = [];
@@ -140,6 +140,44 @@ test('does not retry an HTTP 404 response', async () => {
       wait: async (milliseconds) => waits.push(milliseconds),
     }),
     /Request failed: 404/,
+  );
+
+  assert.equal(attempts, 1);
+  assert.deepEqual(waits, []);
+});
+
+test('does not retry an HTTP 501 response', async () => {
+  let attempts = 0;
+  const waits = [];
+
+  await assert.rejects(
+    fetchGithubPreview('https://github.com/chaidiscovery/chai-lab', {
+      fetch: async () => {
+        attempts += 1;
+        throw httpError(501);
+      },
+      wait: async (milliseconds) => waits.push(milliseconds),
+    }),
+    /Request failed: 501/,
+  );
+
+  assert.equal(attempts, 1);
+  assert.deepEqual(waits, []);
+});
+
+test('does not retry an HTTP 505 response', async () => {
+  let attempts = 0;
+  const waits = [];
+
+  await assert.rejects(
+    fetchGithubPreview('https://github.com/chaidiscovery/chai-lab', {
+      fetch: async () => {
+        attempts += 1;
+        throw httpError(505);
+      },
+      wait: async (milliseconds) => waits.push(milliseconds),
+    }),
+    /Request failed: 505/,
   );
 
   assert.equal(attempts, 1);

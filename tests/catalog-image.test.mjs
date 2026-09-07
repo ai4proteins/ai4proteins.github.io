@@ -9,9 +9,11 @@ const HEIGHT = 600;
 const RGB_ROW_BYTES = WIDTH * 3;
 
 function pngChunk(type, data = Buffer.alloc(0)) {
+  const typeBytes = Buffer.isBuffer(type) ? type : Buffer.from(type, 'ascii');
+  assert.equal(typeBytes.length, 4);
   const chunk = Buffer.alloc(12 + data.length);
   chunk.writeUInt32BE(data.length, 0);
-  chunk.write(type, 4, 4, 'ascii');
+  typeBytes.copy(chunk, 4);
   data.copy(chunk, 8);
   chunk.writeUInt32BE(crc32(chunk.subarray(4, 8 + data.length)), 8 + data.length);
   return chunk;
@@ -52,6 +54,52 @@ const VALID_PNG = png(
 
 test('accepts a decodable 1200x600 PNG with valid CRCs and scanlines', () => {
   assert.equal(isGithubPreviewPng(VALID_PNG), true);
+});
+
+test('rejects a CRC-valid high-bit IHDR chunk name', () => {
+  const headerData = ihdr().subarray(8, 21);
+  const highBitIhdr = Buffer.from([0xc9, 0x48, 0x44, 0x52]);
+  const payload = png(
+    pngChunk(highBitIhdr, headerData),
+    pngChunk('IDAT', COMPRESSED_SCANLINES),
+    pngChunk('IEND'),
+  );
+
+  assert.equal(isGithubPreviewPng(payload), false);
+});
+
+test('rejects a CRC-valid high-bit IDAT chunk name', () => {
+  const highBitIdat = Buffer.from([0xc9, 0x44, 0x41, 0x54]);
+  const payload = png(
+    ihdr(),
+    pngChunk(highBitIdat, COMPRESSED_SCANLINES),
+    pngChunk('IEND'),
+  );
+
+  assert.equal(isGithubPreviewPng(payload), false);
+});
+
+test('rejects a CRC-valid one-byte PLTE chunk', () => {
+  const payload = png(
+    ihdr(),
+    pngChunk('PLTE', Buffer.from([0])),
+    pngChunk('IDAT', COMPRESSED_SCANLINES),
+    pngChunk('IEND'),
+  );
+
+  assert.equal(isGithubPreviewPng(payload), false);
+});
+
+test('rejects CRC-valid duplicate PLTE chunks', () => {
+  const payload = png(
+    ihdr(),
+    pngChunk('PLTE', Buffer.from([0, 0, 0])),
+    pngChunk('PLTE', Buffer.from([255, 255, 255])),
+    pngChunk('IDAT', COMPRESSED_SCANLINES),
+    pngChunk('IEND'),
+  );
+
+  assert.equal(isGithubPreviewPng(payload), false);
 });
 
 test('rejects a fully inflated indexed PNG without its mandatory PLTE chunk', () => {

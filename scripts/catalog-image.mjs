@@ -1,53 +1,39 @@
-const RIFF_HEADER = 'RIFF';
-const WEBP_HEADER = 'WEBP';
+const PNG_SIGNATURE = Buffer.from('89504e470d0a1a0a', 'hex');
 
-export function isWebp(payload) {
-  if (!Buffer.isBuffer(payload) || payload.length < 12) return false;
-  if (payload.subarray(0, 4).toString() !== RIFF_HEADER) return false;
-  if (payload.subarray(8, 12).toString() !== WEBP_HEADER) return false;
-  if (payload.readUInt32LE(4) + 8 !== payload.length) return false;
+export function isGithubPreviewPng(payload) {
+  if (!Buffer.isBuffer(payload) || payload.length < PNG_SIGNATURE.length) return false;
+  if (!payload.subarray(0, PNG_SIGNATURE.length).equals(PNG_SIGNATURE)) return false;
 
-  let offset = 12;
-  let hasImagePayload = false;
+  let offset = PNG_SIGNATURE.length;
   let chunkIndex = 0;
-  let hasExtendedHeader = false;
+  let hasImageData = false;
 
   while (offset < payload.length) {
-    if (payload.length - offset < 8) return false;
+    if (payload.length - offset < 12) return false;
 
-    const chunkType = payload.subarray(offset, offset + 4).toString();
-    const chunkSize = payload.readUInt32LE(offset + 4);
-    const chunkStart = offset + 8;
-    const paddedChunkSize = chunkSize + (chunkSize % 2);
+    const dataLength = payload.readUInt32BE(offset);
+    if (dataLength > payload.length - offset - 12) return false;
 
-    if (paddedChunkSize > payload.length - chunkStart) return false;
-    if (chunkType === 'VP8X') {
-      if (chunkIndex !== 0 || hasExtendedHeader || chunkSize !== 10) return false;
-      if ((payload[chunkStart] & 0xc1) !== 0) return false;
-      if (payload[chunkStart + 1] !== 0
-        || payload[chunkStart + 2] !== 0
-        || payload[chunkStart + 3] !== 0) return false;
-      hasExtendedHeader = true;
-    } else if (chunkType === 'VP8 ') {
-      if (hasImagePayload) return false;
-      if (chunkSize < 10 || (payload[chunkStart] & 1) !== 0) return false;
-      if (payload[chunkStart + 3] !== 0x9d
-        || payload[chunkStart + 4] !== 0x01
-        || payload[chunkStart + 5] !== 0x2a) return false;
-      if ((payload.readUInt16LE(chunkStart + 6) & 0x3fff) === 0
-        || (payload.readUInt16LE(chunkStart + 8) & 0x3fff) === 0) return false;
-      hasImagePayload = true;
-    } else if (chunkType === 'VP8L') {
-      if (hasImagePayload) return false;
-      // Five header bytes must be followed by encoded image data.
-      if (chunkSize <= 5 || payload[chunkStart] !== 0x2f) return false;
-      if ((payload[chunkStart + 4] & 0xe0) !== 0) return false;
-      hasImagePayload = true;
+    const type = payload.subarray(offset + 4, offset + 8).toString('ascii');
+    const dataOffset = offset + 8;
+    const nextOffset = offset + 12 + dataLength;
+
+    if (chunkIndex === 0) {
+      if (type !== 'IHDR' || dataLength !== 13) return false;
+      if (payload.readUInt32BE(dataOffset) !== 1200
+        || payload.readUInt32BE(dataOffset + 4) !== 600) return false;
+    } else if (type === 'IHDR') {
+      return false;
     }
 
-    offset = chunkStart + paddedChunkSize;
+    if (type === 'IDAT' && dataLength > 0) hasImageData = true;
+    if (type === 'IEND') {
+      return dataLength === 0 && hasImageData && nextOffset === payload.length;
+    }
+
+    offset = nextOffset;
     chunkIndex += 1;
   }
 
-  return offset === payload.length && hasImagePayload;
+  return false;
 }

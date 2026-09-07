@@ -1,5 +1,16 @@
 const REDIRECT_STATUSES = new Set([301, 302, 303, 307, 308]);
 
+function retryAfterMilliseconds(value) {
+  if (value === null) return undefined;
+  if (/^\d+$/.test(value)) {
+    const milliseconds = Number(value) * 1000;
+    return Number.isSafeInteger(milliseconds) ? milliseconds : undefined;
+  }
+
+  const timestamp = Date.parse(value);
+  return Number.isNaN(timestamp) ? undefined : Math.max(0, timestamp - Date.now());
+}
+
 async function cancelBody(response) {
   if (!response.body) return;
   try {
@@ -50,8 +61,12 @@ export async function fetchBytes(url, {
       continue;
     }
     if (!response.ok) {
+      const error = new Error(`Request failed: ${response.status}`);
+      error.status = response.status;
+      const retryAfterMs = retryAfterMilliseconds(response.headers.get('retry-after'));
+      if (retryAfterMs !== undefined) error.retryAfterMs = retryAfterMs;
       await cancelBody(response);
-      throw new Error(`Request failed: ${response.status}`);
+      throw error;
     }
 
     const declaredLength = response.headers.get('content-length');

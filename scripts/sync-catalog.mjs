@@ -1,9 +1,14 @@
 import { mkdir, mkdtemp, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { isWebp } from './catalog-image.mjs';
-import { assetFilename, toCatalogEntry } from './catalog-source.mjs';
+import { isGithubPreviewPng } from './catalog-image.mjs';
+import {
+  assetFilename,
+  githubRepositoryParts,
+  selectCatalogEntries,
+} from './catalog-source.mjs';
 import { fetchBytes } from './fetch-bytes.mjs';
+import { downloadRepositoryPreviews } from './github-preview.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const overridesPath = join(root, 'data', 'repository-overrides.json');
@@ -13,7 +18,11 @@ const stagePath = await mkdtemp(join(root, '.catalog-stage-'));
 const allowedOrigin = 'https://neurosnap.ai';
 const requestTimeoutMs = 30_000;
 const catalogMaxBytes = 2 * 1024 * 1024;
-const imageMaxBytes = 8 * 1024 * 1024;
+
+function repositoryKey(repositoryUrl) {
+  const { owner, repository } = githubRepositoryParts(repositoryUrl);
+  return `https://github.com/${owner.toLowerCase()}/${repository.toLowerCase()}`;
+}
 
 async function replaceOutputs(outputs) {
   const backups = [];
@@ -51,9 +60,22 @@ try {
     timeoutMs: requestTimeoutMs,
   });
   const services = JSON.parse(catalogBytes.toString('utf8'));
-  if (services.length !== 156) throw new Error(`Expected 156 services, got ${services.length}`);
+  if (!Array.isArray(services)) throw new TypeError('Expected the service catalog to be an array');
 
-  const tools = services.map((service) => toCatalogEntry(service, overrides[service.title]));
+  const overrideTitles = Object.keys(overrides);
+  if (overrideTitles.length !== 130) {
+    throw new Error(`Expected 130 repository overrides, got ${overrideTitles.length}`);
+  }
+  const serviceTitles = new Set(services.map(({ title }) => title));
+  const missingTitles = overrideTitles.filter((title) => !serviceTitles.has(title));
+  if (missingTitles.length > 0) {
+    throw new Error(`Mapped services are missing from the source catalog: ${missingTitles.join(', ')}`);
+  }
+
+  const tools = selectCatalogEntries(services, overrides);
+  if (tools.length !== overrideTitles.length) {
+    throw new Error(`Expected ${overrideTitles.length} mapped services, got ${tools.length}`);
+  }
   const imageFilenames = tools.map(({ title }) => assetFilename(title));
   if (new Set(imageFilenames).size !== tools.length) {
     throw new Error('Catalog titles produce duplicate image filenames');
@@ -64,24 +86,14 @@ try {
   await mkdir(stagedImagesPath);
   await writeFile(stagedToolsPath, `${JSON.stringify(tools, null, 2)}\n`);
 
-  const downloads = await Promise.allSettled(tools.map(async (tool) => {
-    const image = await fetchBytes(
-      `https://neurosnap.ai/assets/services/${encodeURIComponent(tool.title)}.webp`,
-      {
-        allowedOrigin,
-        maxBytes: imageMaxBytes,
-        timeoutMs: requestTimeoutMs,
-      },
-    );
-    if (!isWebp(image)) {
-      throw new Error(`Image request returned invalid WebP data for ${tool.title}`);
+  const previews = await downloadRepositoryPreviews(tools);
+  await Promise.all(tools.map(async (tool) => {
+    const image = previews.get(repositoryKey(tool.githubUrl));
+    if (!isGithubPreviewPng(image)) {
+      throw new Error(`Missing valid GitHub preview PNG for ${tool.title}`);
     }
     await writeFile(join(stagedImagesPath, assetFilename(tool.title)), image);
   }));
-  const failedDownload = downloads.find(({ status }) => status === 'rejected');
-  if (failedDownload) {
-    throw failedDownload.reason;
-  }
 
   await replaceOutputs([
     {

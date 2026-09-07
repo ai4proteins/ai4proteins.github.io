@@ -103,6 +103,68 @@ test('cancels an HTTP error response before rejecting it', async (t) => {
   await assertResponseClosedPromptly(responseClosed);
 });
 
+test('HTTP errors expose status and seconds-form Retry-After metadata', async (t) => {
+  const server = await serve((_request, response) => {
+    response.writeHead(429, { 'retry-after': '2' }).end('rate limited');
+  });
+  t.after(server.close);
+
+  await assert.rejects(
+    fetchBytes(`${server.origin}/rate-limited`, {
+      allowedOrigin: server.origin,
+      maxBytes: 1024,
+      timeoutMs: 1000,
+    }),
+    (error) => {
+      assert.equal(error.status, 429);
+      assert.equal(error.retryAfterMs, 2000);
+      return true;
+    },
+  );
+});
+
+test('HTTP errors parse date-form Retry-After metadata into a numeric delay', async (t) => {
+  const retryAt = new Date(Date.now() + 3000).toUTCString();
+  const server = await serve((_request, response) => {
+    response.writeHead(503, { 'retry-after': retryAt }).end('unavailable');
+  });
+  t.after(server.close);
+
+  await assert.rejects(
+    fetchBytes(`${server.origin}/temporarily-unavailable`, {
+      allowedOrigin: server.origin,
+      maxBytes: 1024,
+      timeoutMs: 1000,
+    }),
+    (error) => {
+      assert.equal(error.status, 503);
+      assert.equal(typeof error.retryAfterMs, 'number');
+      assert.ok(error.retryAfterMs >= 1500 && error.retryAfterMs <= 3000);
+      return true;
+    },
+  );
+});
+
+test('HTTP errors omit retry delay metadata when Retry-After is malformed', async (t) => {
+  const server = await serve((_request, response) => {
+    response.writeHead(500, { 'retry-after': 'eventually' }).end('failed');
+  });
+  t.after(server.close);
+
+  await assert.rejects(
+    fetchBytes(`${server.origin}/failed`, {
+      allowedOrigin: server.origin,
+      maxBytes: 1024,
+      timeoutMs: 1000,
+    }),
+    (error) => {
+      assert.equal(error.status, 500);
+      assert.equal(error.retryAfterMs, undefined);
+      return true;
+    },
+  );
+});
+
 test('applies one timeout while reading the response body', async (t) => {
   const server = await serve((_request, response) => {
     response.writeHead(200, { 'content-type': 'application/octet-stream' });

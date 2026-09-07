@@ -17,12 +17,21 @@ function pngChunk(type, data = Buffer.alloc(0)) {
   return chunk;
 }
 
-function ihdr(width = 1200, height = 600) {
+function ihdr(width = 1200, height = 600, {
+  bitDepth = 8,
+  colorType = 2,
+  compression = 0,
+  filter = 0,
+  interlace = 0,
+} = {}) {
   const data = Buffer.alloc(13);
   data.writeUInt32BE(width, 0);
   data.writeUInt32BE(height, 4);
-  data[8] = 8;
-  data[9] = 2;
+  data[8] = bitDepth;
+  data[9] = colorType;
+  data[10] = compression;
+  data[11] = filter;
+  data[12] = interlace;
   return pngChunk('IHDR', data);
 }
 
@@ -43,6 +52,38 @@ const VALID_PNG = png(
 
 test('accepts a decodable 1200x600 PNG with valid CRCs and scanlines', () => {
   assert.equal(isGithubPreviewPng(VALID_PNG), true);
+});
+
+test('rejects a fully inflated indexed PNG without its mandatory PLTE chunk', () => {
+  const indexedScanlines = Buffer.alloc((WIDTH + 1) * HEIGHT);
+  const indexedPngWithoutPalette = png(
+    ihdr(WIDTH, HEIGHT, { colorType: 3 }),
+    pngChunk('IDAT', deflateSync(indexedScanlines)),
+    pngChunk('IEND'),
+  );
+
+  assert.equal(isGithubPreviewPng(indexedPngWithoutPalette), false);
+});
+
+test('rejects IHDR formats outside the GitHub preview RGB contract', () => {
+  const unsupportedFormats = [
+    [{ colorType: 0 }, WIDTH],
+    [{ colorType: 6 }, WIDTH * 4],
+    [{ bitDepth: 16 }, WIDTH * 3 * 2],
+    [{ compression: 1 }, RGB_ROW_BYTES],
+    [{ filter: 1 }, RGB_ROW_BYTES],
+    [{ interlace: 1 }, RGB_ROW_BYTES],
+  ];
+
+  for (const [format, rowBytes] of unsupportedFormats) {
+    const scanlines = Buffer.alloc((rowBytes + 1) * HEIGHT);
+    const payload = png(
+      ihdr(WIDTH, HEIGHT, format),
+      pngChunk('IDAT', deflateSync(scanlines)),
+      pngChunk('IEND'),
+    );
+    assert.equal(isGithubPreviewPng(payload), false, JSON.stringify(format));
+  }
 });
 
 test('rejects CRC corruption', () => {

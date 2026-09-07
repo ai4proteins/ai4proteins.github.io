@@ -3,29 +3,13 @@ import { crc32, inflateSync } from 'node:zlib';
 const PNG_SIGNATURE = Buffer.from('89504e470d0a1a0a', 'hex');
 
 function scanlineBytes(ihdr) {
-  const bitDepth = ihdr[8];
-  const colorType = ihdr[9];
-  const channelsByColorType = new Map([
-    [0, 1],
-    [2, 3],
-    [3, 1],
-    [4, 2],
-    [6, 4],
-  ]);
-  const validBitDepths = new Map([
-    [0, new Set([1, 2, 4, 8, 16])],
-    [2, new Set([8, 16])],
-    [3, new Set([1, 2, 4, 8])],
-    [4, new Set([8, 16])],
-    [6, new Set([8, 16])],
-  ]);
-
-  if (!validBitDepths.get(colorType)?.has(bitDepth)
+  if (ihdr[8] !== 8
+    || ihdr[9] !== 2
     || ihdr[10] !== 0
     || ihdr[11] !== 0
     || ihdr[12] !== 0) return undefined;
 
-  return Math.ceil(1200 * channelsByColorType.get(colorType) * bitDepth / 8);
+  return 1200 * 3;
 }
 
 export function isGithubPreviewPng(payload) {

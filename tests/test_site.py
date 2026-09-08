@@ -53,7 +53,7 @@ class ToolsPageTests(unittest.TestCase):
 
     def open_catalog(self):
         self.page.goto(self.base_url)
-        expect(self.page.locator("[data-tool-card]")).to_have_count(156)
+        expect(self.page.locator("[data-tool-card]")).to_have_count(130)
 
     def test_tools_render_and_search(self):
         self.open_catalog()
@@ -86,7 +86,7 @@ class ToolsPageTests(unittest.TestCase):
         expect(self.page.locator("[data-tool-card]")).to_have_count(category_count)
         self.page.get_by_role("searchbox", name="Search tools").fill("no-such-tool-897")
         self.page.get_by_role("button", name="Clear filters", exact=True).click()
-        expect(self.page.locator("[data-tool-card]")).to_have_count(156)
+        expect(self.page.locator("[data-tool-card]")).to_have_count(130)
         expect(category).to_have_attribute("aria-pressed", "false")
         expect(self.page.get_by_role("searchbox", name="Search tools")).to_have_value("")
 
@@ -97,45 +97,166 @@ class ToolsPageTests(unittest.TestCase):
         expect(self.page.get_by_role("heading", name="No tools found")).to_be_visible()
         expect(self.page.get_by_role("status")).to_contain_text("0 tools")
         self.page.get_by_role("button", name="Clear search", exact=True).click()
-        expect(self.page.locator("[data-tool-card]")).to_have_count(156)
+        expect(self.page.locator("[data-tool-card]")).to_have_count(130)
 
     def test_cards_are_safe_github_links(self):
         self.open_catalog()
         cards = self.page.locator("[data-tool-card]")
         for card in cards.all():
-            self.assertTrue(card.get_attribute("href").startswith("https://github.com/"))
+            self.assertRegex(card.get_attribute("href"), r"^https://github\.com/[^/?#]+/[^/?#]+$")
             self.assertEqual(card.get_attribute("target"), "_blank")
             self.assertIn("noopener", card.get_attribute("rel"))
             self.assertIn("noreferrer", card.get_attribute("rel"))
-            self.assertRegex(card.inner_text(), r"official repository|GitHub repository search")
-            self.assertTrue(card.locator("img").get_attribute("src").startswith("assets/tools/"))
-            self.assertEqual(card.locator("img").get_attribute("loading"), "lazy")
-        expect(cards.first.locator("img")).to_be_visible()
-        self.page.wait_for_function("document.querySelector('[data-tool-card] img').naturalWidth > 0")
+            self.assertEqual(card.locator(".visually-hidden").inner_text(), "official repository")
+            image = card.locator("img")
+            self.assertRegex(image.get_attribute("src"), r"^assets/tools/.+\.png$")
+            self.assertEqual(image.get_attribute("loading"), "lazy")
+            self.assertEqual(image.get_attribute("width"), "1200")
+            self.assertEqual(image.get_attribute("height"), "600")
+        images = cards.locator("img")
+        expect(images).to_have_count(130)
+        image_details = images.evaluate_all("""async images => {
+            const details = [];
+            for (const image of images) {
+                image.scrollIntoView({ block: 'center' });
+                await new Promise((resolve) => requestAnimationFrame(
+                    () => requestAnimationFrame(resolve)
+                ));
+                try {
+                    await image.decode();
+                    details.push({
+                        src: image.getAttribute('src'),
+                        decoded: image.complete && image.naturalWidth === 1200 && image.naturalHeight === 600,
+                    });
+                } catch (error) {
+                    details.push({
+                        src: image.getAttribute('src'),
+                        decoded: false,
+                        error: `${error.name}: ${error.message}`,
+                    });
+                }
+            }
+            return details;
+        }""")
+        failures = [image for image in image_details if not image["decoded"]]
+        self.assertEqual(failures, [])
+
+    def test_card_images_render_at_two_to_one(self):
+        self.open_catalog()
+        ratios = self.page.locator("[data-tool-card] img").evaluate_all("""images => images.map((image) => {
+            const box = image.getBoundingClientRect();
+            return box.width / box.height;
+        })""")
+        self.assertEqual(len(ratios), 130)
+        for ratio in ratios:
+            self.assertAlmostEqual(ratio, 2.0, delta=0.01)
+
+    def test_search_boundary_has_non_text_contrast(self):
+        self.open_catalog()
+        ratios = self.page.locator(".search-field").evaluate("""element => {
+            const parse = (color) => color.match(/[\\d.]+/g).slice(0, 3).map(Number);
+            const luminance = (color) => {
+                const channels = parse(color).map((channel) => {
+                    const value = channel / 255;
+                    return value <= 0.04045
+                        ? value / 12.92
+                        : ((value + 0.055) / 1.055) ** 2.4;
+                });
+                return 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2];
+            };
+            const contrast = (first, second) => {
+                const values = [luminance(first), luminance(second)].sort((a, b) => b - a);
+                return (values[0] + 0.05) / (values[1] + 0.05);
+            };
+            const boundary = getComputedStyle(element).borderTopColor;
+            const inputSurface = getComputedStyle(element).backgroundColor;
+            const pageSurface = getComputedStyle(document.documentElement).backgroundColor;
+            return {
+                input: contrast(boundary, inputSurface),
+                page: contrast(boundary, pageSurface),
+            };
+        }""")
+        self.assertGreaterEqual(ratios["input"], 3)
+        self.assertGreaterEqual(ratios["page"], 3)
+
+    def test_mobile_icons_remain_distinct_in_forced_colors(self):
+        self.page.set_viewport_size({"width": 390, "height": 844})
+        self.page.emulate_media(forced_colors="active")
+        self.open_catalog()
+        colors = self.page.evaluate("""() => {
+            const menu = document.querySelector('.menu-icon');
+            const search = document.querySelector('.search-icon');
+            return {
+                header: getComputedStyle(document.querySelector('.site-header')).backgroundColor,
+                menuBar: getComputedStyle(menu).backgroundColor,
+                menuBarBefore: getComputedStyle(menu, '::before').backgroundColor,
+                menuBarAfter: getComputedStyle(menu, '::after').backgroundColor,
+                searchSurface: getComputedStyle(document.querySelector('.search-field')).backgroundColor,
+                searchCircle: getComputedStyle(search).borderTopColor,
+                searchHandle: getComputedStyle(search, '::after').backgroundColor,
+            };
+        }""")
+        self.assertNotEqual(colors["menuBar"], colors["header"])
+        self.assertNotEqual(colors["menuBarBefore"], colors["header"])
+        self.assertNotEqual(colors["menuBarAfter"], colors["header"])
+        self.assertNotEqual(colors["searchCircle"], colors["searchSurface"])
+        self.assertNotEqual(colors["searchHandle"], colors["searchSurface"])
 
     def test_mobile_navigation_and_layout(self):
         self.page.set_viewport_size({"width": 390, "height": 844})
         self.open_catalog()
-        menu = self.page.get_by_role("button", name="Open navigation")
+        menu = self.page.locator(".menu-button")
         nav = self.page.get_by_role("navigation", name="Primary")
         expect(menu).to_have_attribute("aria-expanded", "false")
+        expect(menu).to_have_attribute("aria-label", "Open navigation")
+        expect(menu).to_have_attribute("title", "Open navigation")
+        expect(self.page.get_by_role("button", name="Open navigation")).to_be_visible()
         expect(nav).to_be_hidden()
         menu.click()
         expect(menu).to_have_attribute("aria-expanded", "true")
+        expect(menu).to_have_attribute("aria-label", "Close navigation")
+        expect(menu).to_have_attribute("title", "Close navigation")
         expect(nav).to_be_visible()
         self.assertEqual(nav.get_by_role("link").all_text_contents(),
                          ["Tools", "Papers", "Molecules", "Structure Prediction", "Design", "Property"])
         expect(nav.get_by_role("link", name="Tools", exact=True)).to_have_attribute("aria-current", "page")
+        menu.click()
+        expect(nav).to_be_hidden()
+        expect(menu).to_have_attribute("aria-label", "Open navigation")
+        expect(menu).to_have_attribute("title", "Open navigation")
+
+        menu.click()
+        focused_link = nav.get_by_role("link", name="Papers", exact=True)
+        focused_link.focus()
+        expect(focused_link).to_be_focused()
         self.page.keyboard.press("Escape")
         expect(nav).to_be_hidden()
+        expect(menu).to_have_attribute("aria-label", "Open navigation")
+        expect(menu).to_have_attribute("title", "Open navigation")
+        expect(menu).to_be_focused()
+
+        menu.click()
+        self.page.locator("#primary-navigation").evaluate(
+            "element => element.addEventListener('click', event => event.preventDefault())"
+        )
+        nav.get_by_role("link", name="Tools", exact=True).click()
+        expect(nav).to_be_hidden()
+        expect(menu).to_have_attribute("aria-label", "Open navigation")
+        expect(menu).to_have_attribute("title", "Open navigation")
         self.assertTrue(self.page.evaluate("document.documentElement.scrollWidth <= innerWidth"))
         self.assertLess(self.page.locator("[data-tool-card]").first.bounding_box()["y"], 844)
+
+        menu.click()
+        self.page.set_viewport_size({"width": 900, "height": 844})
+        expect(menu).to_have_attribute("aria-expanded", "false")
+        expect(menu).to_have_attribute("aria-label", "Open navigation")
+        expect(menu).to_have_attribute("title", "Open navigation")
 
     def test_mobile_navigation_preserves_brand_row_position(self):
         self.page.set_viewport_size({"width": 390, "height": 844})
         self.open_catalog()
         brand = self.page.get_by_role("link", name="AI4Protein home")
-        menu = self.page.get_by_role("button", name="Open navigation")
+        menu = self.page.locator(".menu-button")
         before = [brand.bounding_box(), menu.bounding_box()]
         menu.click()
         expect(self.page.get_by_role("navigation", name="Primary")).to_be_visible()
@@ -175,7 +296,7 @@ class ToolsPageTests(unittest.TestCase):
         self.page.wait_for_timeout(100)
         self.assertEqual(len(pending), 1)
         pending[0].fulfill(path=str(ROOT / "data/tools.json"), content_type="application/json")
-        expect(self.page.locator("[data-tool-card]")).to_have_count(156)
+        expect(self.page.locator("[data-tool-card]")).to_have_count(130)
         expect(self.page.get_by_role("status")).not_to_contain_text("Loading")
 
     def test_fetch_error_replaces_loading(self):

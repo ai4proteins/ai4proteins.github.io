@@ -1,11 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
-import { assetFilename } from '../scripts/catalog-source.mjs';
-import { isWebp } from '../scripts/catalog-image.mjs';
+import { assetFilename, githubRepositoryParts } from '../scripts/catalog-source.mjs';
+import { isGithubPreviewPng } from '../scripts/catalog-image.mjs';
 import { collectFilters, filterTools } from '../assets/js/catalog.js';
 
 const tools = JSON.parse(await readFile(new URL('../data/tools.json', import.meta.url)));
+const repositoryOverrides = JSON.parse(
+  await readFile(new URL('../data/repository-overrides.json', import.meta.url)),
+);
 
 const fixtureTools = [
   {
@@ -28,10 +31,15 @@ const fixtureTools = [
   },
 ];
 
-test('catalog has 156 unique and complete GitHub-linked tools', async () => {
-  assert.equal(tools.length, 156);
-  assert.equal(new Set(tools.map(({ title }) => title)).size, 156);
-  assert.equal(new Set(tools.map(({ image }) => image)).size, 156);
+test('catalog has exactly the 130 reviewed official tools', async () => {
+  assert.equal(tools.length, 130);
+  assert.deepEqual(
+    new Set(tools.map(({ title }) => title)),
+    new Set(Object.keys(repositoryOverrides)),
+  );
+  assert.equal(new Set(tools.map(({ image }) => image)).size, 130);
+  assert.ok(tools.every(({ linkType }) => linkType === 'official'));
+  assert.ok(tools.every(({ image }) => image.endsWith('.png')));
 
   const expectedFields = [
     'beta',
@@ -43,12 +51,6 @@ test('catalog has 156 unique and complete GitHub-linked tools', async () => {
     'tags',
     'title',
   ];
-  const expectedImages = new Set(tools.map(({ image }) => image.replace('assets/tools/', '')));
-  const imageFiles = (await readdir(new URL('../assets/tools/', import.meta.url)))
-    .filter((filename) => filename.endsWith('.webp'));
-  assert.equal(imageFiles.length, 156);
-  assert.deepEqual(new Set(imageFiles), expectedImages);
-
   for (const tool of tools) {
     assert.deepEqual(Object.keys(tool).sort(), expectedFields);
     assert.equal(typeof tool.title, 'string');
@@ -62,13 +64,51 @@ test('catalog has 156 unique and complete GitHub-linked tools', async () => {
     assert.ok(tool.tags.every((tag) => typeof tag === 'string'));
     assert.equal(typeof tool.beta, 'boolean');
     assert.equal(tool.image, `assets/tools/${assetFilename(tool.title)}`);
-    assert.ok(['official', 'search'].includes(tool.linkType));
     assert.equal(typeof tool.githubUrl, 'string');
-    const url = new URL(tool.githubUrl);
-    assert.equal(url.protocol, 'https:');
-    assert.equal(url.hostname, 'github.com');
-    const image = await readFile(new URL(`../${tool.image}`, import.meta.url));
-    assert.ok(isWebp(image), `${tool.image} is not a valid WebP payload`);
+    assert.doesNotThrow(() => githubRepositoryParts(tool.githubUrl));
+  }
+});
+
+test('tool image directory exactly matches the referenced valid PNG assets', async () => {
+  const expectedImages = new Set(tools.map(({ image }) => image.replace('assets/tools/', '')));
+  const imageFiles = await readdir(new URL('../assets/tools/', import.meta.url));
+
+  assert.equal(imageFiles.some((filename) => filename.endsWith('.webp')), false);
+  assert.deepEqual(new Set(imageFiles), expectedImages);
+
+  for (const filename of imageFiles) {
+    const image = await readFile(new URL(`../assets/tools/${filename}`, import.meta.url));
+    assert.ok(isGithubPreviewPng(image), `${filename} is not a valid GitHub preview PNG`);
+  }
+});
+
+test('confirmed repository review findings stay corrected in source and generated catalog', () => {
+  const expected = {
+    AfCycDesign: {
+      override: 'https://github.com/sokrypton/ColabDesign',
+      githubUrl: 'https://github.com/sokrypton/ColabDesign',
+      linkType: 'official',
+    },
+    'EnzBert E.C. Prediction': {
+      override: undefined,
+      retained: false,
+    },
+    'AutoDock Vina (smina)': {
+      override: undefined,
+      retained: false,
+    },
+  };
+
+  for (const [title, values] of Object.entries(expected)) {
+    assert.equal(repositoryOverrides[title], values.override, `${title} source override`);
+    const tool = tools.find((entry) => entry.title === title);
+    if (values.retained === false) {
+      assert.equal(tool, undefined, `${title} is omitted from generated catalog`);
+    } else {
+      assert.ok(tool, `${title} exists in generated catalog`);
+      assert.equal(tool.githubUrl, values.githubUrl, `${title} generated URL`);
+      assert.equal(tool.linkType, values.linkType, `${title} generated classification`);
+    }
   }
 });
 

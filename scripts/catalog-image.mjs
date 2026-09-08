@@ -1,41 +1,79 @@
-const RIFF_HEADER = 'RIFF';
-const WEBP_HEADER = 'WEBP';
+import { crc32, inflateSync } from 'node:zlib';
 
-export function isWebp(payload) {
-  if (!Buffer.isBuffer(payload) || payload.length < 12) return false;
-  if (payload.subarray(0, 4).toString() !== RIFF_HEADER) return false;
-  if (payload.subarray(8, 12).toString() !== WEBP_HEADER) return false;
-  if (payload.readUInt32LE(4) + 8 !== payload.length) return false;
+const PNG_SIGNATURE = Buffer.from('89504e470d0a1a0a', 'hex');
+const IHDR = Buffer.from('IHDR', 'ascii');
+const IDAT = Buffer.from('IDAT', 'ascii');
+const IEND = Buffer.from('IEND', 'ascii');
 
-  let offset = 12;
-  let hasImagePayload = false;
+function scanlineBytes(ihdr) {
+  if (ihdr[8] !== 8
+    || ihdr[9] !== 2
+    || ihdr[10] !== 0
+    || ihdr[11] !== 0
+    || ihdr[12] !== 0) return undefined;
+
+  return 1200 * 3;
+}
+
+export function isGithubPreviewPng(payload) {
+  if (!Buffer.isBuffer(payload) || payload.length < PNG_SIGNATURE.length) return false;
+  if (!payload.subarray(0, PNG_SIGNATURE.length).equals(PNG_SIGNATURE)) return false;
+
+  let offset = PNG_SIGNATURE.length;
+  let hasIdatChunk = false;
+  let hasImageData = false;
+  let rowBytes;
+  const compressedParts = [];
 
   while (offset < payload.length) {
-    if (payload.length - offset < 8) return false;
+    if (payload.length - offset < 12) return false;
 
-    const chunkType = payload.subarray(offset, offset + 4).toString();
-    const chunkSize = payload.readUInt32LE(offset + 4);
-    const chunkStart = offset + 8;
-    const paddedChunkSize = chunkSize + (chunkSize % 2);
+    const dataLength = payload.readUInt32BE(offset);
+    if (dataLength > payload.length - offset - 12) return false;
 
-    if (paddedChunkSize > payload.length - chunkStart) return false;
-    if (chunkType === 'VP8 ') {
-      if (chunkSize < 10 || (payload[chunkStart] & 1) !== 0) return false;
-      if (payload[chunkStart + 3] !== 0x9d
-        || payload[chunkStart + 4] !== 0x01
-        || payload[chunkStart + 5] !== 0x2a) return false;
-      if ((payload.readUInt16LE(chunkStart + 6) & 0x3fff) === 0
-        || (payload.readUInt16LE(chunkStart + 8) & 0x3fff) === 0) return false;
-      hasImagePayload = true;
-    } else if (chunkType === 'VP8L') {
-      // Five header bytes must be followed by encoded image data.
-      if (chunkSize <= 5 || payload[chunkStart] !== 0x2f) return false;
-      if ((payload[chunkStart + 4] & 0xe0) !== 0) return false;
-      hasImagePayload = true;
+    const type = payload.subarray(offset + 4, offset + 8);
+    const dataOffset = offset + 8;
+    const nextOffset = offset + 12 + dataLength;
+    const storedCrc = payload.readUInt32BE(dataOffset + dataLength);
+    const computedCrc = crc32(payload.subarray(offset + 4, dataOffset + dataLength));
+    if (storedCrc !== computedCrc) return false;
+
+    if (offset === PNG_SIGNATURE.length) {
+      if (!type.equals(IHDR) || dataLength !== 13) return false;
+      if (payload.readUInt32BE(dataOffset) !== 1200
+        || payload.readUInt32BE(dataOffset + 4) !== 600) return false;
+      rowBytes = scanlineBytes(payload.subarray(dataOffset, dataOffset + dataLength));
+      if (rowBytes === undefined) return false;
+    } else if (type.equals(IDAT)) {
+      hasIdatChunk = true;
+      if (dataLength > 0) hasImageData = true;
+      compressedParts.push(payload.subarray(dataOffset, dataOffset + dataLength));
+    } else if (type.equals(IEND)) {
+      if (dataLength !== 0
+        || !hasIdatChunk
+        || !hasImageData
+        || nextOffset !== payload.length) return false;
+
+      const expectedLength = (rowBytes + 1) * 600;
+      let scanlines;
+      try {
+        scanlines = inflateSync(Buffer.concat(compressedParts), {
+          maxOutputLength: expectedLength,
+        });
+      } catch {
+        return false;
+      }
+      if (scanlines.length !== expectedLength) return false;
+      for (let row = 0; row < 600; row += 1) {
+        if (scanlines[row * (rowBytes + 1)] > 4) return false;
+      }
+      return true;
+    } else {
+      return false;
     }
 
-    offset = chunkStart + paddedChunkSize;
+    offset = nextOffset;
   }
 
-  return offset === payload.length && hasImagePayload;
+  return false;
 }

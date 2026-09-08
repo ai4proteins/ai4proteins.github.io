@@ -1,74 +1,5 @@
 [
   {
-    "title": "NeuroBind",
-    "description": "Design antibodies, nanobodies, scFvs, and peptides with high affinity and low immunogenicity.",
-    "categories": [
-      "Protein Design"
-    ],
-    "tags": [
-      "Affinity Prediction",
-      "Antibodies",
-      "Developability",
-      "Immunogenicity",
-      "Other Binders",
-      "Peptides",
-      "Proteins",
-      "Solubility",
-      "Stability"
-    ],
-    "beta": false,
-    "image": "assets/tools/neurobind.webp",
-    "githubUrl": "https://github.com/search?q=NeuroBind&type=repositories",
-    "linkType": "search"
-  },
-  {
-    "title": "BindFilter",
-    "description": "Fold and score many binder candidates with a unified, machine-readable output.",
-    "categories": [
-      "Protein Design"
-    ],
-    "tags": [
-      "Affinity Prediction",
-      "Aggregation Risk",
-      "Antibodies",
-      "Co-Folding",
-      "Developability",
-      "Energy Minimization",
-      "Immunogenicity",
-      "Mutational Scanning",
-      "Other Binders",
-      "Peptides",
-      "Protein Clustering",
-      "Protein Folding",
-      "Proteins",
-      "Solubility",
-      "Stability",
-      "Toxicity"
-    ],
-    "beta": false,
-    "image": "assets/tools/bindfilter.webp",
-    "githubUrl": "https://github.com/search?q=BindFilter&type=repositories",
-    "linkType": "search"
-  },
-  {
-    "title": "NeuroFold2",
-    "description": "Design next-generation enzymes by co-optimizing for catalytic activity, stability, and solubility.",
-    "categories": [
-      "Protein Design"
-    ],
-    "tags": [
-      "Developability",
-      "Enzymes",
-      "Proteins",
-      "Solubility",
-      "Stability"
-    ],
-    "beta": false,
-    "image": "assets/tools/neurofold2.webp",
-    "githubUrl": "https://github.com/search?q=NeuroFold2&type=repositories",
-    "linkType": "search"
-  },
-  {
     "title": "Chai-1 (AlphaFold3)",
     "description": "Commercial friendly alternative to AlphaFold3 with competitive MSA-less option.",
     "categories": [
@@ -85,7 +16,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/chai-1-alphafold3.webp",
+    "image": "assets/tools/chai-1-alphafold3.png",
     "githubUrl": "https://github.com/chaidiscovery/chai-lab",
     "linkType": "official"
   },
@@ -107,7 +38,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/boltz-2-alphafold3.webp",
+    "image": "assets/tools/boltz-2-alphafold3.png",
     "githubUrl": "https://github.com/jwohlwend/boltz",
     "linkType": "official"
   },
@@ -128,7 +59,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/protenix-alphafold3.webp",
+    "image": "assets/tools/protenix-alphafold3.png",
     "githubUrl": "https://github.com/bytedance/Protenix",
     "linkType": "official"
   },
@@ -149,7 +80,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/intellifold-alphafold3.webp",
+    "image": "assets/tools/intellifold-alphafold3.png",
     "githubUrl": "https://github.com/IntelliGen-AI/IntelliFold",
     "linkType": "official"
   },
@@ -165,7 +96,7 @@
       "Protein–Protein Docking"
     ],
     "beta": false,
-    "image": "assets/tools/alphafold2.webp",
+    "image": "assets/tools/alphafold2.png",
     "githubUrl": "https://github.com/google-deepmind/alphafold",
     "linkType": "official"
   },
@@ -183,7 +114,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/boltzgen.webp",
+    "image": "assets/tools/boltzgen.png",
     "githubUrl": "https://github.com/HannesStark/boltzgen",
     "linkType": "official"
   },
@@ -201,7 +132,7 @@
       "Stability"
     ],
     "beta": false,
-    "image": "assets/tools/prot2prop-protein-property-prediction.webp",
+    "image": "assets/tools/prot2prop-protein-property-prediction.png",
     "githubUrl": "https://github.com/NeurosnapInc/Prot2Prop",
     "linkType": "official"
   },
@@ -222,7 +153,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/fksfold-chai.webp",
+    "image": "assets/tools/fksfold-chai.png",
     "githubUrl": "https://github.com/TimS-ml/FKSFold-Chai",
     "linkType": "official"
   },
@@ -244,7 +175,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/lmi4boltz.webp",
+    "image": "assets/tools/lmi4boltz.png",
     "githubUrl": "https://github.com/tlitfin/lmi4boltz",
     "linkType": "official"
   },
@@ -258,7 +189,7 @@
       "Enzymes"
     ],
     "beta": false,
-    "image": "assets/tools/bagel-protein-design.webp",
+    "image": "assets/tools/bagel-protein-design.png",
     "githubUrl": "https://github.com/softnanolab/bagel",
     "linkType": "official"
   },
@@ -274,7 +205,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/proteina-complexa.webp",
+    "image": "assets/tools/proteina-complexa.png",
     "githubUrl": "https://github.com/NVIDIA-BioNeMo/Proteina-Complexa",
     "linkType": "official"
   },
@@ -291,7 +222,7 @@
       "Virtual Screening"
     ],
     "beta": false,
-    "image": "assets/tools/proteinebm-scoring.webp",
+    "image": "assets/tools/proteinebm-scoring.png",
     "githubUrl": "https://github.com/jproney/ProteinEBM",
     "linkType": "official"
   },
@@ -307,7 +238,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/proteinebm-dynamics.webp",
+    "image": "assets/tools/proteinebm-dynamics.png",
     "githubUrl": "https://github.com/jproney/ProteinEBM",
     "linkType": "official"
   },
@@ -321,7 +252,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/caliby.webp",
+    "image": "assets/tools/caliby.png",
     "githubUrl": "https://github.com/ProteinDesignLab/caliby",
     "linkType": "official"
   },
@@ -336,7 +267,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/bindcraft.webp",
+    "image": "assets/tools/bindcraft.png",
     "githubUrl": "https://github.com/martinpacesa/BindCraft",
     "linkType": "official"
   },
@@ -357,7 +288,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/openfold3-alphafold3.webp",
+    "image": "assets/tools/openfold3-alphafold3.png",
     "githubUrl": "https://github.com/aqlaboratory/openfold-3",
     "linkType": "official"
   },
@@ -378,7 +309,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/esmfold2.webp",
+    "image": "assets/tools/esmfold2.png",
     "githubUrl": "https://github.com/Biohub/esm",
     "linkType": "official"
   },
@@ -392,7 +323,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/esmc-feature-interpretation.webp",
+    "image": "assets/tools/esmc-feature-interpretation.png",
     "githubUrl": "https://github.com/Biohub/esm",
     "linkType": "official"
   },
@@ -407,7 +338,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/esmfold2-binder-design.webp",
+    "image": "assets/tools/esmfold2-binder-design.png",
     "githubUrl": "https://github.com/Biohub/esm",
     "linkType": "official"
   },
@@ -424,7 +355,7 @@
       "Virtual Screening"
     ],
     "beta": false,
-    "image": "assets/tools/esmc-mutation-scoring.webp",
+    "image": "assets/tools/esmc-mutation-scoring.png",
     "githubUrl": "https://github.com/Biohub/esm",
     "linkType": "official"
   },
@@ -441,7 +372,7 @@
       "Virtual Screening"
     ],
     "beta": false,
-    "image": "assets/tools/gnina.webp",
+    "image": "assets/tools/gnina.png",
     "githubUrl": "https://github.com/gnina/gnina",
     "linkType": "official"
   },
@@ -458,7 +389,7 @@
       "Virtual Screening"
     ],
     "beta": false,
-    "image": "assets/tools/dynamicbind.webp",
+    "image": "assets/tools/dynamicbind.png",
     "githubUrl": "https://github.com/biocheming/DynamicBind",
     "linkType": "official"
   },
@@ -475,7 +406,7 @@
       "Virtual Screening"
     ],
     "beta": false,
-    "image": "assets/tools/diffdock-l.webp",
+    "image": "assets/tools/diffdock-l.png",
     "githubUrl": "https://github.com/gcorso/DiffDock",
     "linkType": "official"
   },
@@ -491,7 +422,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/rfantibody.webp",
+    "image": "assets/tools/rfantibody.png",
     "githubUrl": "https://github.com/RosettaCommons/RFantibody",
     "linkType": "official"
   },
@@ -506,7 +437,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/rfdiffusion3.webp",
+    "image": "assets/tools/rfdiffusion3.png",
     "githubUrl": "https://github.com/RosettaCommons/foundry",
     "linkType": "official"
   },
@@ -522,7 +453,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/disco.webp",
+    "image": "assets/tools/disco.png",
     "githubUrl": "https://github.com/DISCO-design/DISCO",
     "linkType": "official"
   },
@@ -538,7 +469,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/rfdiffusion2.webp",
+    "image": "assets/tools/rfdiffusion2.png",
     "githubUrl": "https://github.com/RosettaCommons/RFdiffusion2",
     "linkType": "official"
   },
@@ -553,7 +484,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/rfdiffusion.webp",
+    "image": "assets/tools/rfdiffusion.png",
     "githubUrl": "https://github.com/RosettaCommons/RFdiffusion",
     "linkType": "official"
   },
@@ -568,24 +499,9 @@
       "Molecular Dynamics"
     ],
     "beta": false,
-    "image": "assets/tools/openmm-molecular-dynamics.webp",
+    "image": "assets/tools/openmm-molecular-dynamics.png",
     "githubUrl": "https://github.com/openmm/openmm",
     "linkType": "official"
-  },
-  {
-    "title": "Martini OpenMM Molecular Dynamics",
-    "description": "Run Martini coarse-grained OpenMM molecular dynamics simulations with staged minimization, NVT, NPT, and production MD.",
-    "categories": [
-      "Molecular Dynamics & Simulation"
-    ],
-    "tags": [
-      "Energy Minimization",
-      "Molecular Dynamics"
-    ],
-    "beta": false,
-    "image": "assets/tools/martini-openmm-molecular-dynamics.webp",
-    "githubUrl": "https://github.com/search?q=Martini+OpenMM+Molecular+Dynamics&type=repositories",
-    "linkType": "search"
   },
   {
     "title": "GROMACS Molecular Dynamics",
@@ -600,7 +516,7 @@
       "Molecular Dynamics"
     ],
     "beta": false,
-    "image": "assets/tools/gromacs-molecular-dynamics.webp",
+    "image": "assets/tools/gromacs-molecular-dynamics.png",
     "githubUrl": "https://github.com/gromacs/gromacs",
     "linkType": "official"
   },
@@ -617,41 +533,9 @@
       "Molecular Dynamics"
     ],
     "beta": false,
-    "image": "assets/tools/gmx-mmpbsa.webp",
+    "image": "assets/tools/gmx-mmpbsa.png",
     "githubUrl": "https://github.com/Valdes-Tresanco-MS/gmx_MMPBSA",
     "linkType": "official"
-  },
-  {
-    "title": "Single-Point Energy Calculation",
-    "description": "Evaluate a fixed molecular geometry across a broad, provenance-rich catalog of electronic-structure methods and molecular potentials.",
-    "categories": [
-      "Ligand/Drug Design & Screening"
-    ],
-    "tags": [
-      "Free Energy / Binding Energy",
-      "Small Molecules"
-    ],
-    "beta": false,
-    "image": "assets/tools/single-point-energy-calculation.webp",
-    "githubUrl": "https://github.com/search?q=Single-Point+Energy+Calculation&type=repositories",
-    "linkType": "search"
-  },
-  {
-    "title": "Grid Inhomogeneous Solvation Theory (GIST)",
-    "description": "Simulate and map local binding-site hydration thermodynamics with a reproducible OpenMM and cpptraj GIST workflow.",
-    "categories": [
-      "Ligand/Drug Design & Screening",
-      "Molecular Dynamics & Simulation"
-    ],
-    "tags": [
-      "Free Energy / Binding Energy",
-      "Molecular Dynamics",
-      "Small Molecules"
-    ],
-    "beta": false,
-    "image": "assets/tools/grid-inhomogeneous-solvation-theory-gist.webp",
-    "githubUrl": "https://github.com/search?q=Grid+Inhomogeneous+Solvation+Theory+%28GIST%29&type=repositories",
-    "linkType": "search"
   },
   {
     "title": "OpenFE Relative Binding Free Energy",
@@ -666,7 +550,7 @@
       "Small Molecules"
     ],
     "beta": true,
-    "image": "assets/tools/openfe-relative-binding-free-energy.webp",
+    "image": "assets/tools/openfe-relative-binding-free-energy.png",
     "githubUrl": "https://github.com/OpenFreeEnergy/openfe",
     "linkType": "official"
   },
@@ -683,7 +567,7 @@
       "Small Molecules"
     ],
     "beta": true,
-    "image": "assets/tools/openfe-absolute-binding-free-energy.webp",
+    "image": "assets/tools/openfe-absolute-binding-free-energy.png",
     "githubUrl": "https://github.com/OpenFreeEnergy/openfe",
     "linkType": "official"
   },
@@ -700,7 +584,7 @@
       "Small Molecules"
     ],
     "beta": true,
-    "image": "assets/tools/openfe-hydration-free-energy.webp",
+    "image": "assets/tools/openfe-hydration-free-energy.png",
     "githubUrl": "https://github.com/OpenFreeEnergy/openfe",
     "linkType": "official"
   },
@@ -714,7 +598,7 @@
       "Molecular Dynamics"
     ],
     "beta": false,
-    "image": "assets/tools/mdanalysis-trajectory-analysis.webp",
+    "image": "assets/tools/mdanalysis-trajectory-analysis.png",
     "githubUrl": "https://github.com/MDAnalysis/mdanalysis",
     "linkType": "official"
   },
@@ -731,7 +615,7 @@
       "Proteins"
     ],
     "beta": true,
-    "image": "assets/tools/lacuna-cryptic-pocket-discovery.webp",
+    "image": "assets/tools/lacuna-cryptic-pocket-discovery.png",
     "githubUrl": "https://github.com/mooreneural/lacuna",
     "linkType": "official"
   },
@@ -746,7 +630,7 @@
       "Protein–Protein Docking"
     ],
     "beta": false,
-    "image": "assets/tools/colabdock.webp",
+    "image": "assets/tools/colabdock.png",
     "githubUrl": "https://github.com/JeffSHF/ColabDock",
     "linkType": "official"
   },
@@ -766,7 +650,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/rosettafold3.webp",
+    "image": "assets/tools/rosettafold3.png",
     "githubUrl": "https://github.com/RosettaCommons/foundry",
     "linkType": "official"
   },
@@ -782,7 +666,7 @@
       "Protein–Protein Docking"
     ],
     "beta": false,
-    "image": "assets/tools/rosettafold2.webp",
+    "image": "assets/tools/rosettafold2.png",
     "githubUrl": "https://github.com/uw-ipd/RoseTTAFold2",
     "linkType": "official"
   },
@@ -802,7 +686,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/rosettafold-all-atom.webp",
+    "image": "assets/tools/rosettafold-all-atom.png",
     "githubUrl": "https://github.com/baker-laboratory/RoseTTAFold-All-Atom",
     "linkType": "official"
   },
@@ -817,7 +701,7 @@
       "Virtual Screening"
     ],
     "beta": false,
-    "image": "assets/tools/genmol.webp",
+    "image": "assets/tools/genmol.png",
     "githubUrl": "https://github.com/NVIDIA-BioNeMo/genmol",
     "linkType": "official"
   },
@@ -832,7 +716,7 @@
       "Virtual Screening"
     ],
     "beta": false,
-    "image": "assets/tools/pocketflow.webp",
+    "image": "assets/tools/pocketflow.png",
     "githubUrl": "https://github.com/Saoge123/PocketFlow",
     "linkType": "official"
   },
@@ -850,7 +734,7 @@
       "Virtual Screening"
     ],
     "beta": false,
-    "image": "assets/tools/pocketxmol-dock.webp",
+    "image": "assets/tools/pocketxmol-dock.png",
     "githubUrl": "https://github.com/pengxingang/PocketXMol",
     "linkType": "official"
   },
@@ -866,7 +750,7 @@
       "Peptides"
     ],
     "beta": false,
-    "image": "assets/tools/pocketxmol-protein-design.webp",
+    "image": "assets/tools/pocketxmol-protein-design.png",
     "githubUrl": "https://github.com/pengxingang/PocketXMol",
     "linkType": "official"
   },
@@ -884,7 +768,7 @@
       "Virtual Screening"
     ],
     "beta": false,
-    "image": "assets/tools/pocketxmol-small-molecule-design.webp",
+    "image": "assets/tools/pocketxmol-small-molecule-design.png",
     "githubUrl": "https://github.com/pengxingang/PocketXMol",
     "linkType": "official"
   },
@@ -902,7 +786,7 @@
       "Virtual Screening"
     ],
     "beta": false,
-    "image": "assets/tools/evoef2.webp",
+    "image": "assets/tools/evoef2.png",
     "githubUrl": "https://github.com/tommyhuangthu/EvoEF2",
     "linkType": "official"
   },
@@ -920,24 +804,9 @@
       "Virtual Screening"
     ],
     "beta": false,
-    "image": "assets/tools/evoef2-mutant-stability-analysis.webp",
+    "image": "assets/tools/evoef2-mutant-stability-analysis.png",
     "githubUrl": "https://github.com/tommyhuangthu/EvoEF2",
     "linkType": "official"
-  },
-  {
-    "title": "Isoelectric Point Calculator",
-    "description": "Sequence-only pI/pKa prediction (IPC 1/2).",
-    "categories": [
-      "Sequence Analysis & Annotation"
-    ],
-    "tags": [
-      "Peptides",
-      "Proteins"
-    ],
-    "beta": false,
-    "image": "assets/tools/isoelectric-point-calculator.webp",
-    "githubUrl": "https://github.com/search?q=Isoelectric+Point+Calculator&type=repositories",
-    "linkType": "search"
   },
   {
     "title": "QEPPI",
@@ -950,7 +819,7 @@
       "Virtual Screening"
     ],
     "beta": false,
-    "image": "assets/tools/qeppi.webp",
+    "image": "assets/tools/qeppi.png",
     "githubUrl": "https://github.com/ohuelab/QEPPI",
     "linkType": "official"
   },
@@ -967,41 +836,9 @@
       "Synthetic Accessibility"
     ],
     "beta": false,
-    "image": "assets/tools/chembounce.webp",
+    "image": "assets/tools/chembounce.png",
     "githubUrl": "https://github.com/jyryu3161/chembounce",
     "linkType": "official"
-  },
-  {
-    "title": "Transcript Assembly",
-    "description": "Easily perform transcript quantification using an input fastq file.",
-    "categories": [
-      "Multi-omics"
-    ],
-    "tags": [
-      "RNA-seq",
-      "Transcript Assembly"
-    ],
-    "beta": false,
-    "image": "assets/tools/transcript-assembly.webp",
-    "githubUrl": "https://github.com/search?q=Transcript+Assembly&type=repositories",
-    "linkType": "search"
-  },
-  {
-    "title": "Interleaved FASTQ Splitter",
-    "description": "Split interleaved FASTQ into left/right FASTQ with validation.",
-    "categories": [
-      "Multi-omics",
-      "Utilities & Conversions"
-    ],
-    "tags": [
-      "File Conversion",
-      "RNA-seq",
-      "Transcript Assembly"
-    ],
-    "beta": false,
-    "image": "assets/tools/interleaved-fastq-splitter.webp",
-    "githubUrl": "https://github.com/search?q=Interleaved+FASTQ+Splitter&type=repositories",
-    "linkType": "search"
   },
   {
     "title": "Evo 2",
@@ -1014,7 +851,7 @@
       "Nucleotides"
     ],
     "beta": false,
-    "image": "assets/tools/evo-2.webp",
+    "image": "assets/tools/evo-2.png",
     "githubUrl": "https://github.com/ArcInstitute/evo2",
     "linkType": "official"
   },
@@ -1029,7 +866,7 @@
       "Protein–Protein Docking"
     ],
     "beta": false,
-    "image": "assets/tools/lightdock.webp",
+    "image": "assets/tools/lightdock.png",
     "githubUrl": "https://github.com/lightdock/lightdock",
     "linkType": "official"
   },
@@ -1044,7 +881,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/esmfold.webp",
+    "image": "assets/tools/esmfold.png",
     "githubUrl": "https://github.com/facebookresearch/esm",
     "linkType": "official"
   },
@@ -1062,7 +899,7 @@
       "Solubility"
     ],
     "beta": false,
-    "image": "assets/tools/ligandmpnn.webp",
+    "image": "assets/tools/ligandmpnn.png",
     "githubUrl": "https://github.com/dauparas/LigandMPNN",
     "linkType": "official"
   },
@@ -1078,7 +915,7 @@
       "Solubility"
     ],
     "beta": false,
-    "image": "assets/tools/proteinmpnn.webp",
+    "image": "assets/tools/proteinmpnn.png",
     "githubUrl": "https://github.com/dauparas/ProteinMPNN",
     "linkType": "official"
   },
@@ -1095,24 +932,9 @@
       "Solubility"
     ],
     "beta": false,
-    "image": "assets/tools/netsolp-1-0.webp",
+    "image": "assets/tools/netsolp-1-0.png",
     "githubUrl": "https://github.com/teevee112/NetSolP-1.0",
     "linkType": "official"
-  },
-  {
-    "title": "DEAnalysis",
-    "description": "Differential Expression Analysis pipeline configured for two-condition experiments.",
-    "categories": [
-      "Multi-omics"
-    ],
-    "tags": [
-      "Differential Expression",
-      "RNA-seq"
-    ],
-    "beta": false,
-    "image": "assets/tools/deanalysis.webp",
-    "githubUrl": "https://github.com/search?q=DEAnalysis&type=repositories",
-    "linkType": "search"
   },
   {
     "title": "ESM-IF1",
@@ -1125,7 +947,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/esm-if1.webp",
+    "image": "assets/tools/esm-if1.png",
     "githubUrl": "https://github.com/facebookresearch/esm",
     "linkType": "official"
   },
@@ -1140,7 +962,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/mif-st.webp",
+    "image": "assets/tools/mif-st.png",
     "githubUrl": "https://github.com/microsoft/protein-sequence-models",
     "linkType": "official"
   },
@@ -1156,9 +978,9 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/afcycdesign.webp",
-    "githubUrl": "https://github.com/search?q=AfCycDesign&type=repositories",
-    "linkType": "search"
+    "image": "assets/tools/afcycdesign.png",
+    "githubUrl": "https://github.com/sokrypton/ColabDesign",
+    "linkType": "official"
   },
   {
     "title": "AF2Bind",
@@ -1172,7 +994,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/af2bind.webp",
+    "image": "assets/tools/af2bind.png",
     "githubUrl": "https://github.com/sokrypton/af2bind",
     "linkType": "official"
   },
@@ -1188,7 +1010,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/scannet-protein-binding-site-prediction.webp",
+    "image": "assets/tools/scannet-protein-binding-site-prediction.png",
     "githubUrl": "https://github.com/jertubiana/ScanNet",
     "linkType": "official"
   },
@@ -1204,7 +1026,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/afcluster.webp",
+    "image": "assets/tools/afcluster.png",
     "githubUrl": "https://github.com/HWaymentSteele/AF_Cluster",
     "linkType": "official"
   },
@@ -1220,7 +1042,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/prodigy-binding-affinity-prediction.webp",
+    "image": "assets/tools/prodigy-binding-affinity-prediction.png",
     "githubUrl": "https://github.com/haddocking/prodigy",
     "linkType": "official"
   },
@@ -1235,40 +1057,9 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/ppap.webp",
+    "image": "assets/tools/ppap.png",
     "githubUrl": "https://github.com/TEKHOO/PPAP",
     "linkType": "official"
-  },
-  {
-    "title": "Interaction Analysis",
-    "description": "Detect and summarize molecular interactions across uploaded structures.",
-    "categories": [
-      "Molecular Docking & Interactions"
-    ],
-    "tags": [
-      "Nucleotides",
-      "Proteins",
-      "Small Molecules"
-    ],
-    "beta": false,
-    "image": "assets/tools/interaction-analysis.webp",
-    "githubUrl": "https://github.com/search?q=Interaction+Analysis&type=repositories",
-    "linkType": "search"
-  },
-  {
-    "title": "Interaction Fingerprint",
-    "description": "Compare protein-ligand interaction fingerprints across compounds with ProLIF.",
-    "categories": [
-      "Molecular Docking & Interactions"
-    ],
-    "tags": [
-      "Proteins",
-      "Small Molecules"
-    ],
-    "beta": false,
-    "image": "assets/tools/interaction-fingerprint.webp",
-    "githubUrl": "https://github.com/search?q=Interaction+Fingerprint&type=repositories",
-    "linkType": "search"
   },
   {
     "title": "SPRINT",
@@ -1283,7 +1074,7 @@
       "Virtual Screening"
     ],
     "beta": false,
-    "image": "assets/tools/sprint.webp",
+    "image": "assets/tools/sprint.png",
     "githubUrl": "https://github.com/abhinadduri/panspecies-dti",
     "linkType": "official"
   },
@@ -1298,7 +1089,7 @@
       "Expression"
     ],
     "beta": false,
-    "image": "assets/tools/dna-chisel-sequence-optimizer.webp",
+    "image": "assets/tools/dna-chisel-sequence-optimizer.png",
     "githubUrl": "https://github.com/Edinburgh-Genome-Foundry/DnaChisel",
     "linkType": "official"
   },
@@ -1313,7 +1104,7 @@
       "Expression"
     ],
     "beta": false,
-    "image": "assets/tools/codontransformer.webp",
+    "image": "assets/tools/codontransformer.png",
     "githubUrl": "https://github.com/Adibvafa/CodonTransformer",
     "linkType": "official"
   },
@@ -1329,7 +1120,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/tisigner-expression-optimization.webp",
+    "image": "assets/tools/tisigner-expression-optimization.png",
     "githubUrl": "https://github.com/Gardner-BinfLab/TISIGNER",
     "linkType": "official"
   },
@@ -1345,7 +1136,7 @@
       "Solubility"
     ],
     "beta": false,
-    "image": "assets/tools/sodope-solubility-optimization.webp",
+    "image": "assets/tools/sodope-solubility-optimization.png",
     "githubUrl": "https://github.com/Gardner-BinfLab/SoDoPE_paper_2020",
     "linkType": "official"
   },
@@ -1360,24 +1151,9 @@
       "Signal Peptide Detection"
     ],
     "beta": false,
-    "image": "assets/tools/razor-signal-peptide-detection.webp",
+    "image": "assets/tools/razor-signal-peptide-detection.png",
     "githubUrl": "https://github.com/Gardner-BinfLab/Razor",
     "linkType": "official"
-  },
-  {
-    "title": "WoLF PSORT Protein Localization",
-    "description": "Predicts subcellular localization sites from protein sequence.",
-    "categories": [
-      "Sequence Analysis & Annotation"
-    ],
-    "tags": [
-      "Protein Localization",
-      "Proteins"
-    ],
-    "beta": false,
-    "image": "assets/tools/wolf-psort-protein-localization.webp",
-    "githubUrl": "https://github.com/search?q=WoLF+PSORT+Protein+Localization&type=repositories",
-    "linkType": "search"
   },
   {
     "title": "ProtNLM",
@@ -1389,55 +1165,9 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/protnlm.webp",
+    "image": "assets/tools/protnlm.png",
     "githubUrl": "https://github.com/google-research/google-research",
     "linkType": "official"
-  },
-  {
-    "title": "ESM-2 for PTMs",
-    "description": "Predict potential post translational modification sites from sequence data.",
-    "categories": [
-      "Sequence Analysis & Annotation"
-    ],
-    "tags": [
-      "PTM Prediction",
-      "Proteins"
-    ],
-    "beta": false,
-    "image": "assets/tools/esm-2-for-ptms.webp",
-    "githubUrl": "https://github.com/search?q=ESM-2+for+PTMs&type=repositories",
-    "linkType": "search"
-  },
-  {
-    "title": "EnzBert E.C. Prediction",
-    "description": "Enzbert predicts enzymatic classes of protein sequences in batch or individually.",
-    "categories": [
-      "Sequence Analysis & Annotation"
-    ],
-    "tags": [
-      "Enzymes",
-      "Proteins"
-    ],
-    "beta": false,
-    "image": "assets/tools/enzbert-e-c-prediction.webp",
-    "githubUrl": "https://github.com/realalanc/EnzBert",
-    "linkType": "official"
-  },
-  {
-    "title": "ClusterProt",
-    "description": "Cluster same length proteins using only their structures.",
-    "categories": [
-      "Utilities & Conversions"
-    ],
-    "tags": [
-      "Conformation Generation",
-      "Protein Clustering",
-      "Proteins"
-    ],
-    "beta": false,
-    "image": "assets/tools/clusterprot.webp",
-    "githubUrl": "https://github.com/search?q=ClusterProt&type=repositories",
-    "linkType": "search"
   },
   {
     "title": "ITsFlexible",
@@ -1450,7 +1180,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/itsflexible.webp",
+    "image": "assets/tools/itsflexible.png",
     "githubUrl": "https://github.com/fspoendlin/ITsFlexible",
     "linkType": "official"
   },
@@ -1465,7 +1195,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/catpred.webp",
+    "image": "assets/tools/catpred.png",
     "githubUrl": "https://github.com/maranasgroup/CatPred",
     "linkType": "official"
   },
@@ -1480,7 +1210,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/realkcat.webp",
+    "image": "assets/tools/realkcat.png",
     "githubUrl": "https://github.com/TKAI-LAB-Mali/RealKcat",
     "linkType": "official"
   },
@@ -1496,7 +1226,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/dlkcat-kcat-prediction.webp",
+    "image": "assets/tools/dlkcat-kcat-prediction.png",
     "githubUrl": "https://github.com/SysBioChalmers/DLKcat",
     "linkType": "official"
   },
@@ -1512,7 +1242,7 @@
       "Stability"
     ],
     "beta": false,
-    "image": "assets/tools/temstapro-protein-thermostability-prediction.webp",
+    "image": "assets/tools/temstapro-protein-thermostability-prediction.png",
     "githubUrl": "https://github.com/ievapudz/TemStaPro",
     "linkType": "official"
   },
@@ -1528,7 +1258,7 @@
       "Stability"
     ],
     "beta": false,
-    "image": "assets/tools/tempro-nanobody-melting-temperature-prediction.webp",
+    "image": "assets/tools/tempro-nanobody-melting-temperature-prediction.png",
     "githubUrl": "https://github.com/Jerome-Alvarez/TEMPRO",
     "linkType": "official"
   },
@@ -1544,7 +1274,7 @@
       "Toxicity"
     ],
     "beta": false,
-    "image": "assets/tools/etox-drug-toxicity-prediction.webp",
+    "image": "assets/tools/etox-drug-toxicity-prediction.png",
     "githubUrl": "https://github.com/pulimeng/eToxPred",
     "linkType": "official"
   },
@@ -1560,7 +1290,7 @@
       "Toxicity"
     ],
     "beta": false,
-    "image": "assets/tools/toxinpred-peptide-toxicity-prediction.webp",
+    "image": "assets/tools/toxinpred-peptide-toxicity-prediction.png",
     "githubUrl": "https://github.com/raghavagps/toxinpred3",
     "linkType": "official"
   },
@@ -1577,25 +1307,9 @@
       "Protein Folding"
     ],
     "beta": false,
-    "image": "assets/tools/alphaflow.webp",
+    "image": "assets/tools/alphaflow.png",
     "githubUrl": "https://github.com/bjing2016/alphaflow",
     "linkType": "official"
-  },
-  {
-    "title": "AMBER Relaxation",
-    "description": "Relax a protein structure using an AMBER settling protocol.",
-    "categories": [
-      "Molecular Dynamics & Simulation"
-    ],
-    "tags": [
-      "Energy Minimization",
-      "Molecular Dynamics",
-      "Structure Fixing"
-    ],
-    "beta": false,
-    "image": "assets/tools/amber-relaxation.webp",
-    "githubUrl": "https://github.com/search?q=AMBER+Relaxation&type=repositories",
-    "linkType": "search"
   },
   {
     "title": "CryoAtom Cryo-EM Model Builder",
@@ -1608,7 +1322,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/cryoatom-cryo-em-model-builder.webp",
+    "image": "assets/tools/cryoatom-cryo-em-model-builder.png",
     "githubUrl": "https://github.com/YangLab-SDU/CryoAtom",
     "linkType": "official"
   },
@@ -1624,26 +1338,9 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/deepemhancer.webp",
+    "image": "assets/tools/deepemhancer.png",
     "githubUrl": "https://github.com/rsanchezgarc/deepEMhancer",
     "linkType": "official"
-  },
-  {
-    "title": "Aggrescan3D",
-    "description": "Structure-based aggregation profiling with Aggrescan3D",
-    "categories": [
-      "Protein Design"
-    ],
-    "tags": [
-      "Aggregation Risk",
-      "Developability",
-      "Expression",
-      "Solubility"
-    ],
-    "beta": false,
-    "image": "assets/tools/aggrescan3d.webp",
-    "githubUrl": "https://github.com/search?q=Aggrescan3D&type=repositories",
-    "linkType": "search"
   },
   {
     "title": "DeepViscosity",
@@ -1658,7 +1355,7 @@
       "Viscosity"
     ],
     "beta": false,
-    "image": "assets/tools/deepviscosity.webp",
+    "image": "assets/tools/deepviscosity.png",
     "githubUrl": "https://github.com/Lailabcode/DeepViscosity",
     "linkType": "official"
   },
@@ -1672,7 +1369,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/dockq.webp",
+    "image": "assets/tools/dockq.png",
     "githubUrl": "https://github.com/wallnerlab/DockQ",
     "linkType": "official"
   },
@@ -1688,7 +1385,7 @@
       "Stability"
     ],
     "beta": false,
-    "image": "assets/tools/protein-fold-stability-prediction.webp",
+    "image": "assets/tools/protein-fold-stability-prediction.png",
     "githubUrl": "https://github.com/KULL-Centre/_2024_cagiada_stability",
     "linkType": "official"
   },
@@ -1703,7 +1400,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/foldseek-structural-clustering.webp",
+    "image": "assets/tools/foldseek-structural-clustering.png",
     "githubUrl": "https://github.com/steineggerlab/foldseek",
     "linkType": "official"
   },
@@ -1718,7 +1415,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/foldtree.webp",
+    "image": "assets/tools/foldtree.png",
     "githubUrl": "https://github.com/DessimozLab/fold_tree",
     "linkType": "official"
   },
@@ -1735,7 +1432,7 @@
       "Stability"
     ],
     "beta": false,
-    "image": "assets/tools/ephod-optimal-enzyme-ph-prediction.webp",
+    "image": "assets/tools/ephod-optimal-enzyme-ph-prediction.png",
     "githubUrl": "https://github.com/beckham-lab/EpHod",
     "linkType": "official"
   },
@@ -1751,7 +1448,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/immune-builder.webp",
+    "image": "assets/tools/immune-builder.png",
     "githubUrl": "https://github.com/oxpig/ImmuneBuilder",
     "linkType": "official"
   },
@@ -1766,7 +1463,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/anarci.webp",
+    "image": "assets/tools/anarci.png",
     "githubUrl": "https://github.com/oxpig/ANARCI",
     "linkType": "official"
   },
@@ -1781,23 +1478,9 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/anarcii.webp",
+    "image": "assets/tools/anarcii.png",
     "githubUrl": "https://github.com/oxpig/ANARCII",
     "linkType": "official"
-  },
-  {
-    "title": "PDB Animator",
-    "description": "Render animated GIF and MP4 files from multi-model PDB structures.",
-    "categories": [
-      "Utilities & Conversions"
-    ],
-    "tags": [
-      "Proteins"
-    ],
-    "beta": false,
-    "image": "assets/tools/pdb-animator.webp",
-    "githubUrl": "https://github.com/search?q=PDB+Animator&type=repositories",
-    "linkType": "search"
   },
   {
     "title": "Pangolin RNA Splicing Prediction",
@@ -1809,7 +1492,7 @@
       "Genomics"
     ],
     "beta": false,
-    "image": "assets/tools/pangolin-rna-splicing-prediction.webp",
+    "image": "assets/tools/pangolin-rna-splicing-prediction.png",
     "githubUrl": "https://github.com/tkzeng/Pangolin",
     "linkType": "official"
   },
@@ -1824,7 +1507,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/diffab-antibody-design.webp",
+    "image": "assets/tools/diffab-antibody-design.png",
     "githubUrl": "https://github.com/luost26/diffab",
     "linkType": "official"
   },
@@ -1839,7 +1522,7 @@
       "Structure Fixing"
     ],
     "beta": false,
-    "image": "assets/tools/pdbfixer.webp",
+    "image": "assets/tools/pdbfixer.png",
     "githubUrl": "https://github.com/openmm/pdbfixer",
     "linkType": "official"
   },
@@ -1854,24 +1537,9 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/pdb-mmcif-converter.webp",
+    "image": "assets/tools/pdb-mmcif-converter.png",
     "githubUrl": "https://github.com/project-gemmi/gemmi",
     "linkType": "official"
-  },
-  {
-    "title": "Chain Exporter",
-    "description": "Split one structure into separate chain-level PDB or mmCIF files.",
-    "categories": [
-      "Utilities & Conversions"
-    ],
-    "tags": [
-      "File Conversion",
-      "Proteins"
-    ],
-    "beta": false,
-    "image": "assets/tools/chain-exporter.webp",
-    "githubUrl": "https://github.com/search?q=Chain+Exporter&type=repositories",
-    "linkType": "search"
   },
   {
     "title": "PDB-SDF Converter",
@@ -1885,7 +1553,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/pdb-sdf-converter.webp",
+    "image": "assets/tools/pdb-sdf-converter.png",
     "githubUrl": "https://github.com/rdkit/rdkit",
     "linkType": "official"
   },
@@ -1901,40 +1569,8 @@
       "Structure Fixing"
     ],
     "beta": false,
-    "image": "assets/tools/pdb2pqr.webp",
+    "image": "assets/tools/pdb2pqr.png",
     "githubUrl": "https://github.com/Electrostatics/pdb2pqr",
-    "linkType": "official"
-  },
-  {
-    "title": "PDB2Fasta",
-    "description": "Convert a PDB structure into FASTA sequences for each valid protein chain.",
-    "categories": [
-      "Utilities & Conversions"
-    ],
-    "tags": [
-      "File Conversion",
-      "Proteins"
-    ],
-    "beta": false,
-    "image": "assets/tools/pdb2fasta.webp",
-    "githubUrl": "https://github.com/search?q=PDB2Fasta&type=repositories",
-    "linkType": "search"
-  },
-  {
-    "title": "AutoDock Vina (smina)",
-    "description": "An enhanced fork of AutoDock Vina offering customizable scoring functions, improved sampling, and better performance for molecular docking simulations.",
-    "categories": [
-      "Ligand/Drug Design & Screening",
-      "Molecular Docking & Interactions"
-    ],
-    "tags": [
-      "Affinity Prediction",
-      "Protein–Ligand Docking",
-      "Virtual Screening"
-    ],
-    "beta": false,
-    "image": "assets/tools/autodock-vina-smina.webp",
-    "githubUrl": "https://github.com/mwojcikowski/smina",
     "linkType": "official"
   },
   {
@@ -1949,7 +1585,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/conformer-generator.webp",
+    "image": "assets/tools/conformer-generator.png",
     "githubUrl": "https://github.com/rdkit/rdkit",
     "linkType": "official"
   },
@@ -1965,7 +1601,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/mmseqs2-msa-generation.webp",
+    "image": "assets/tools/mmseqs2-msa-generation.png",
     "githubUrl": "https://github.com/soedinglab/MMseqs2",
     "linkType": "official"
   },
@@ -1980,24 +1616,9 @@
       "Structural Alignment"
     ],
     "beta": false,
-    "image": "assets/tools/usalign-structural-alignment.webp",
+    "image": "assets/tools/usalign-structural-alignment.png",
     "githubUrl": "https://github.com/pylelab/USalign",
     "linkType": "official"
-  },
-  {
-    "title": "LDDT Structural Comparison",
-    "description": "Evaluate protein structure quality with a superposition-free local distance difference score",
-    "categories": [
-      "Utilities & Conversions"
-    ],
-    "tags": [
-      "Proteins",
-      "Structural Alignment"
-    ],
-    "beta": false,
-    "image": "assets/tools/lddt-structural-comparison.webp",
-    "githubUrl": "https://github.com/search?q=LDDT+Structural+Comparison&type=repositories",
-    "linkType": "search"
   },
   {
     "title": "StaB-ddG",
@@ -2015,7 +1636,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/stab-ddg.webp",
+    "image": "assets/tools/stab-ddg.png",
     "githubUrl": "https://github.com/LDeng0205/StaB-ddG",
     "linkType": "official"
   },
@@ -2030,7 +1651,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/pammla.webp",
+    "image": "assets/tools/pammla.png",
     "githubUrl": "https://github.com/RachelSilverstein/PAMmla",
     "linkType": "official"
   },
@@ -2045,7 +1666,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/pammla-evolve.webp",
+    "image": "assets/tools/pammla-evolve.png",
     "githubUrl": "https://github.com/RachelSilverstein/PAMmla",
     "linkType": "official"
   },
@@ -2060,7 +1681,7 @@
       "Inverse Folding"
     ],
     "beta": false,
-    "image": "assets/tools/antifold.webp",
+    "image": "assets/tools/antifold.png",
     "githubUrl": "https://github.com/oxpig/AntiFold",
     "linkType": "official"
   },
@@ -2076,7 +1697,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/cryosamu.webp",
+    "image": "assets/tools/cryosamu.png",
     "githubUrl": "https://github.com/chenwei-zhang/CryoSAMU",
     "linkType": "official"
   },
@@ -2092,25 +1713,9 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/muscle-v5-msa-generation.webp",
+    "image": "assets/tools/muscle-v5-msa-generation.png",
     "githubUrl": "https://github.com/rcedgar/muscle",
     "linkType": "official"
-  },
-  {
-    "title": "MAFFT MSA Generation",
-    "description": "Rapidly generate multiple sequence alignments for protein sequences.",
-    "categories": [
-      "Evolution & Phylogenetics",
-      "Sequence Analysis & Annotation"
-    ],
-    "tags": [
-      "Multiple Sequence Alignment",
-      "Proteins"
-    ],
-    "beta": false,
-    "image": "assets/tools/mafft-msa-generation.webp",
-    "githubUrl": "https://github.com/search?q=MAFFT+MSA+Generation&type=repositories",
-    "linkType": "search"
   },
   {
     "title": "ProteinMPNN-ddG",
@@ -2128,7 +1733,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/proteinmpnn-ddg.webp",
+    "image": "assets/tools/proteinmpnn-ddg.png",
     "githubUrl": "https://github.com/PeptoneLtd/proteinmpnn_ddg",
     "linkType": "official"
   },
@@ -2143,7 +1748,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/omegafold.webp",
+    "image": "assets/tools/omegafold.png",
     "githubUrl": "https://github.com/HeliXonProtein/OmegaFold",
     "linkType": "official"
   },
@@ -2159,7 +1764,7 @@
       "Tree Building"
     ],
     "beta": false,
-    "image": "assets/tools/fasttree.webp",
+    "image": "assets/tools/fasttree.png",
     "githubUrl": "https://github.com/morgannprice/fasttree",
     "linkType": "official"
   },
@@ -2173,7 +1778,7 @@
       "Molecular Descriptors"
     ],
     "beta": false,
-    "image": "assets/tools/mordred-molecular-descriptor-calculator.webp",
+    "image": "assets/tools/mordred-molecular-descriptor-calculator.png",
     "githubUrl": "https://github.com/JacksonBurns/mordred-community",
     "linkType": "official"
   },
@@ -2189,7 +1794,7 @@
       "Toxicity"
     ],
     "beta": false,
-    "image": "assets/tools/admet-ai.webp",
+    "image": "assets/tools/admet-ai.png",
     "githubUrl": "https://github.com/swansonk14/admet_ai",
     "linkType": "official"
   },
@@ -2204,24 +1809,9 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/allmetal3d.webp",
+    "image": "assets/tools/allmetal3d.png",
     "githubUrl": "https://github.com/lcbc-epfl/allmetal3d",
     "linkType": "official"
-  },
-  {
-    "title": "Free Wilson Analysis",
-    "description": "Interpretable R-group SAR modeling and analog prioritization for congeneric small-molecule series.",
-    "categories": [
-      "Ligand/Drug Design & Screening"
-    ],
-    "tags": [
-      "Molecular Descriptors",
-      "Small Molecules"
-    ],
-    "beta": false,
-    "image": "assets/tools/free-wilson-analysis.webp",
-    "githubUrl": "https://github.com/search?q=Free+Wilson+Analysis&type=repositories",
-    "linkType": "search"
   },
   {
     "title": "ThermoMPNN",
@@ -2236,7 +1826,7 @@
       "Stability"
     ],
     "beta": false,
-    "image": "assets/tools/thermompnn.webp",
+    "image": "assets/tools/thermompnn.png",
     "githubUrl": "https://github.com/kuhlman-lab/ThermoMPNN",
     "linkType": "official"
   },
@@ -2251,7 +1841,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/car-toner.webp",
+    "image": "assets/tools/car-toner.png",
     "githubUrl": "https://github.com/wt12318/CAR-Toner",
     "linkType": "official"
   },
@@ -2266,7 +1856,7 @@
       "Nucleotides"
     ],
     "beta": false,
-    "image": "assets/tools/rhodesign-rna-inverse-folding.webp",
+    "image": "assets/tools/rhodesign-rna-inverse-folding.png",
     "githubUrl": "https://github.com/ml4bio/RhoDesign",
     "linkType": "official"
   },
@@ -2280,7 +1870,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/structfactor.webp",
+    "image": "assets/tools/structfactor.png",
     "githubUrl": "https://github.com/lieboldj/StrucTFactor",
     "linkType": "official"
   },
@@ -2297,7 +1887,7 @@
       "Stability"
     ],
     "beta": false,
-    "image": "assets/tools/saprot.webp",
+    "image": "assets/tools/saprot.png",
     "githubUrl": "https://github.com/westlake-repl/SaProt",
     "linkType": "official"
   },
@@ -2312,7 +1902,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/progen2.webp",
+    "image": "assets/tools/progen2.png",
     "githubUrl": "https://github.com/salesforce/progen",
     "linkType": "official"
   },
@@ -2329,7 +1919,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/flowdock.webp",
+    "image": "assets/tools/flowdock.png",
     "githubUrl": "https://github.com/BioinfoMachineLearning/FlowDock",
     "linkType": "official"
   },
@@ -2346,7 +1936,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/imapep-antibody-antigen-binding-prediction.webp",
+    "image": "assets/tools/imapep-antibody-antigen-binding-prediction.png",
     "githubUrl": "https://github.com/3BioCompBio/ImaPEp",
     "linkType": "official"
   },
@@ -2364,7 +1954,7 @@
       "Stability"
     ],
     "beta": false,
-    "image": "assets/tools/efficient-evolution.webp",
+    "image": "assets/tools/efficient-evolution.png",
     "githubUrl": "https://github.com/brianhie/efficient-evolution",
     "linkType": "official"
   },
@@ -2381,7 +1971,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/humatch.webp",
+    "image": "assets/tools/humatch.png",
     "githubUrl": "https://github.com/oxpig/Humatch",
     "linkType": "official"
   },
@@ -2397,7 +1987,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/deepimmuno-immunogenicity-prediction.webp",
+    "image": "assets/tools/deepimmuno-immunogenicity-prediction.png",
     "githubUrl": "https://github.com/frankligy/DeepImmuno",
     "linkType": "official"
   },
@@ -2415,7 +2005,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/biophi.webp",
+    "image": "assets/tools/biophi.png",
     "githubUrl": "https://github.com/Merck/BioPhi",
     "linkType": "official"
   },
@@ -2429,7 +2019,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/dr-bert.webp",
+    "image": "assets/tools/dr-bert.png",
     "githubUrl": "https://github.com/maslov-group/DR-BERT",
     "linkType": "official"
   },
@@ -2445,7 +2035,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/prosst-mutation-effect-prediction.webp",
+    "image": "assets/tools/prosst-mutation-effect-prediction.png",
     "githubUrl": "https://github.com/ai4protein/ProSST",
     "linkType": "official"
   },
@@ -2461,7 +2051,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/parasurf.webp",
+    "image": "assets/tools/parasurf.png",
     "githubUrl": "https://github.com/aggelos-michael-papadopoulos/ParaSurf",
     "linkType": "official"
   },
@@ -2477,7 +2067,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/kluster.webp",
+    "image": "assets/tools/kluster.png",
     "githubUrl": "https://github.com/Danialgharaie/kluster",
     "linkType": "official"
   },
@@ -2492,7 +2082,7 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/alphafind.webp",
+    "image": "assets/tools/alphafind.png",
     "githubUrl": "https://github.com/Coda-Research-Group/AlphaFind",
     "linkType": "official"
   },
@@ -2514,7 +2104,7 @@
       "Small Molecules"
     ],
     "beta": false,
-    "image": "assets/tools/boltz-1-alphafold3.webp",
+    "image": "assets/tools/boltz-1-alphafold3.png",
     "githubUrl": "https://github.com/jwohlwend/boltz",
     "linkType": "official"
   },
@@ -2529,26 +2119,8 @@
       "Proteins"
     ],
     "beta": false,
-    "image": "assets/tools/abacus-r-sequence-design.webp",
+    "image": "assets/tools/abacus-r-sequence-design.png",
     "githubUrl": "https://github.com/JWei2015/ABACUS-R",
     "linkType": "official"
-  },
-  {
-    "title": "NeuroFold",
-    "description": "Optimize enzyme thermostability, pH stability, solubility, and reaction rate with high accuracy.",
-    "categories": [
-      "Protein Design"
-    ],
-    "tags": [
-      "Developability",
-      "Enzymes",
-      "Proteins",
-      "Solubility",
-      "Stability"
-    ],
-    "beta": false,
-    "image": "assets/tools/neurofold.webp",
-    "githubUrl": "https://github.com/search?q=NeuroFold&type=repositories",
-    "linkType": "search"
   }
 ]

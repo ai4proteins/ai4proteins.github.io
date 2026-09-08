@@ -4,26 +4,28 @@ const menuButton = document.querySelector('.menu-button');
 const navigation = document.querySelector('.primary-navigation');
 const mobileViewport = window.matchMedia('(max-width: 760px)');
 
-function closeNavigation() {
-  menuButton?.setAttribute('aria-expanded', 'false');
-  navigation?.classList.remove('is-open');
+function setNavigation(expanded) {
+  const label = expanded ? 'Close navigation' : 'Open navigation';
+  menuButton?.setAttribute('aria-expanded', String(expanded));
+  menuButton?.setAttribute('aria-label', label);
+  menuButton?.setAttribute('title', label);
+  navigation?.classList.toggle('is-open', expanded);
 }
 
 menuButton?.addEventListener('click', () => {
   const expanded = menuButton.getAttribute('aria-expanded') !== 'true';
-  menuButton.setAttribute('aria-expanded', String(expanded));
-  navigation.classList.toggle('is-open', expanded);
+  setNavigation(expanded);
 });
 navigation?.addEventListener('click', (event) => {
-  if (event.target.closest('a')) closeNavigation();
+  if (event.target.closest('a')) setNavigation(false);
 });
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && menuButton?.getAttribute('aria-expanded') === 'true') {
-    closeNavigation();
+    setNavigation(false);
     menuButton.focus();
   }
 });
-mobileViewport.addEventListener('change', closeNavigation);
+mobileViewport.addEventListener('change', () => setNavigation(false));
 
 const grid = document.querySelector('#tool-grid');
 if (grid) initializeCatalog();
@@ -125,8 +127,8 @@ function createCard(tool) {
   image.src = tool.image;
   image.alt = '';
   image.loading = 'lazy';
-  image.width = 640;
-  image.height = 360;
+  image.width = 1200;
+  image.height = 600;
   card.append(image);
 
   const body = document.createElement('div');
@@ -158,7 +160,7 @@ function createCard(tool) {
   }
   const repositoryLabel = document.createElement('span');
   repositoryLabel.className = 'visually-hidden';
-  repositoryLabel.textContent = tool.linkType === 'official' ? 'official repository' : 'GitHub repository search';
+  repositoryLabel.textContent = 'official repository';
   body.append(titleRow, description, categories, repositoryLabel);
   card.append(body);
   return card;
